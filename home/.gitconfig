@@ -1,0 +1,9 @@
+[user]
+	email = sam@samlanning.com
+	name = Sam Lanning
+[push]
+	default = simple
+[core]
+	deltaBaseCacheLimit = 1G
+[color]
+	ui = true
