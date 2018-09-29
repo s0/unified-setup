@@ -1,4 +1,4 @@
 [Desktop Entry]
 Name=Unified
 Comment=Unified Setup Session
-Exec=/unified-setup/bin/xsession
+Exec=/unified-setup/opt/desktop/xsession

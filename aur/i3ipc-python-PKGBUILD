@@ -1,0 +1,27 @@
+pkgname=('i3ipc-python')
+_srcname='i3ipc-python'
+pkgver='r1'
+pkgrel='1'
+pkgdesc='An improved Python library to control i3wm'
+arch=('any')
+license=('custom:BSD')
+
+depends=('python')
+makedepends=('git' 'python-setuptools')
+provides=("${pkgname[0]%}")
+conflicts=("${pkgname[0]%}")
+
+source=()
+sha512sums=()
+
+pkgver() {
+    cd "${srcdir}"
+
+    git rev-parse --short 'HEAD'
+}
+
+package() {
+    cd "${srcdir}"
+
+    python setup.py install --root="${pkgdir}" --optimize=1
+}

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+build_user=sam
+
+mkdir /tmp/i3ipc-python
+chown $build_user /tmp/i3ipc-python
+pushd /tmp/i3ipc-python
+
+cp /unified-setup/aur/i3ipc-python-PKGBUILD ./PKGBUILD
+su - $build_user -c "cd /tmp/i3ipc-python; git clone /unified-setup/external/i3ipc-python ./src; makepkg"
+
+# install
+for f in ./i3ipc*; do pacman -U $f; done
+
+popd

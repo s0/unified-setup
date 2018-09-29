@@ -1,0 +1,9 @@
+#! /bin/bash
+
+export PATH=~/.bin:/unified-setup/opt/desktop/bin:$PATH;
+
+[ -r /opt/desktop/xsession-extra ] && source /opt/desktop/xsession-extra;
+
+(sleep 1s && python3 /unified-desktop/opt/desktop/i3-plugin.py) &
+
+i3;
