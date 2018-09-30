@@ -33,6 +33,7 @@ echo "Installing AUR packages"
 
 # setting up config
 ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish
+cp /unified-setup/usr/lib/urxvt/perl/clipboard /usr/lib/urxvt/perl/clipboard
 
 echo "Setting up root user"
 chsh -s /usr/bin/fish
