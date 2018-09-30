@@ -17,7 +17,7 @@ echo "Installing Packages"
 # NON GUI
 pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish wget
 # GUI
-pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator
+pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator dunst
 
 # Downgrade gtk to 3.22 for compatibility with Vertex Theme
 
