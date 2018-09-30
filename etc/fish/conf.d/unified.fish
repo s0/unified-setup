@@ -78,6 +78,7 @@ alias ll='ls -l'
 alias l='ls -la'
 alias grep='grep --color'
 alias su='su -l'
+alias aurget='aurget --config /unified-setup/home/.config/aurgetrc'
 
 abbr g='git'
 abbr gs='git status'
