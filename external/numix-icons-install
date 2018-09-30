@@ -1,0 +1,8 @@
+#! /bin/bash
+
+rm -rf /usr/share/icons/Numix
+cp -r /unified-setup/external/numix-icon-theme/Numix /usr/share/icons/Numix
+pushd /unified-setup/external/numix-folders/
+echo "Updating folder icons and cache..."
+(sleep 1s; echo 6; echo purple;) | ./numix-folders --cli
+popd

@@ -34,6 +34,7 @@ popd
 
 echo "installing themes"
 /unified-setup/external/vertex-theme-install
+/unified-setup/external/numix-icons-install
 
 echo "Updating pkgfile index"
 pkgfile --update
@@ -52,6 +53,7 @@ echo "Installing AUR packages"
 # setting up config
 ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish
 cp /unified-setup/usr/lib/urxvt/perl/clipboard /usr/lib/urxvt/perl/clipboard
+ln -s /unified-setup/etc/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
 
 echo "Setting up root user"
 chsh -s /usr/bin/fish

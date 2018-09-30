@@ -4,3 +4,9 @@
 [submodule "external/vertex-theme"]
 	path = external/vertex-theme
 	url = https://github.com/oberon-manjaro/vertex-theme
+[submodule "external/numix-icon-theme"]
+	path = external/numix-icon-theme
+	url = https://github.com/numixproject/numix-icon-theme
+[submodule "external/numix-folders"]
+	path = external/numix-folders
+	url = https://github.com/numixproject/numix-folders
