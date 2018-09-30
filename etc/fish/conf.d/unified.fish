@@ -60,7 +60,7 @@ end
 # environment variables
 # =====================
 
-set -x EDITOR "emacs -nw"
+set -x EDITOR "emacs -nw -l /unified-setup/config/emacs/.emacs"
 set -x VISUAL $EDITOR
 set -x UAEDITOR $EDITOR
 set -x LS_OPTIONS '--color=auto --group-directories-first -h --time-style=long-iso'

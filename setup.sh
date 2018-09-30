@@ -17,7 +17,7 @@ echo "Installing Packages"
 # NON GUI
 pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish
 # GUI
-pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu
+pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr
 
 echo "Updating pkgfile index"
 pkgfile --update

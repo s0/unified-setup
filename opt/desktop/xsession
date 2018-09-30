@@ -4,6 +4,8 @@ export PATH=~/.bin:/unified-setup/opt/desktop/bin:$PATH;
 
 [ -r /opt/desktop/xsession-extra ] && source /opt/desktop/xsession-extra;
 
+xcompmgr &
+
 (sleep 1s && python3 /unified-setup/opt/desktop/i3-plugin.py) &
 
 i3;
