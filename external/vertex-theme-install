@@ -5,5 +5,6 @@ build_dir=/tmp/vertex-theme
 
 su - $build_user -c "cd /tmp; git clone /unified-setup/external/vertex-theme ${build_dir}; cd ${build_dir}; ./autogen.sh --prefix=/usr"
 pushd /tmp/vertex-theme
-sudo make install
+rm -rf /usr/share/themes/{Vertex,Vertex-Dark,Vertex-Light,Vertex-Gnome-Shell,Vertex-Gnome-Shell-3.16,Vertex-Cinnamon}
+make install
 popd
