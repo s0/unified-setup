@@ -15,7 +15,7 @@ git submodule update --init
 echo "Installing Packages"
 
 # NON GUI
-pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo
+pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish
 # GUI
 pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu
 
@@ -30,6 +30,9 @@ ln -s /unified-setup/usr/share/xsessions/unified-setup.desktop /usr/share/xsessi
 
 echo "Installing AUR packages"
 /unified-setup/aur/i3ipc-python-install
+
+# setting up config
+ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish
 
 echo "Setting up users"
 useradd sam
