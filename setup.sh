@@ -17,16 +17,18 @@ echo "Installing Packages"
 # NON GUI
 pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish
 # GUI
-pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr
+pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr numix-gtk-theme
 
 echo "Updating pkgfile index"
 pkgfile --update
 
 echo "Setting up lightdm"
 systemctl enable lightdm
-# TODO: configure /etc/lightdm/lightdm.conf to use lightdm-gtk-greeter
 ln -s /unified-setup/usr/share/xsessions/unified-setup.desktop /usr/share/xsessions/unified-setup.desktop
-# TODO: configure lightdm to use unified-session
+rm /etc/lightdm/lightdm-gtk-greeter.conf
+rm /etc/lightdm/lightdm.conf
+ln -s /unified-setup/etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+ln -s /unified-setup/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 
 echo "Installing AUR packages"
 /unified-setup/aur/i3ipc-python-install
