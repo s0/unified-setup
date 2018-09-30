@@ -1,0 +1,9 @@
+#!/bin/bash
+
+build_user=sam
+build_dir=/tmp/vertex-theme
+
+su - $build_user -c "cd /tmp; git clone /unified-setup/external/vertex-theme ${build_dir}; cd ${build_dir}; ./autogen.sh --prefix=/usr"
+pushd /tmp/vertex-theme
+sudo make install
+popd

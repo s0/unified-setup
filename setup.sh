@@ -15,9 +15,25 @@ git submodule update --init
 echo "Installing Packages"
 
 # NON GUI
-pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish
+pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish wget
 # GUI
 pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator
+
+# Downgrade gtk to 3.22 for compatibility with Vertex Theme
+
+pushd /var/cache/pacman/pkg/
+wget https://archive.archlinux.org/packages/g/gtk3/gtk3-3.22.9-1-x86_64.pkg.tar.xz
+wget https://archive.archlinux.org/packages/g/gtk3/gtk3-3.22.9-1-x86_64.pkg.tar.xz.sig
+pacman-key -v gtk3-3.22.9-1-x86_64.pkg.tar.xz.sig
+echo ""
+echo ""
+echo "######### WARNING: Check signature above before installing"
+echo ""
+pacman -U gtk3-3.22.9-1-x86_64.pkg.tar.xz
+popd
+
+echo "installing themes"
+/unified-setup/external/vertex-theme-install
 
 echo "Updating pkgfile index"
 pkgfile --update

@@ -1,3 +1,6 @@
 [submodule "external/i3ipc-python"]
 	path = external/i3ipc-python
 	url = https://github.com/acrisci/i3ipc-python
+[submodule "external/vertex-theme"]
+	path = external/vertex-theme
+	url = https://github.com/horst3180/vertex-theme
