@@ -55,6 +55,7 @@ echo "Installing AUR packages"
 ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish
 cp /unified-setup/usr/lib/urxvt/perl/clipboard /usr/lib/urxvt/perl/clipboard
 ln -s /unified-setup/etc/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
+ln -sf /unified-setup/etc/i3/config /etc/i3/config
 
 echo "Setting up root user"
 chsh -s /usr/bin/fish
