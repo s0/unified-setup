@@ -1,0 +1,59 @@
+URxvt.scrollBar: False
+
+! Background
+URxvt.background: #171714
+!URxvt.transparent: true
+!URxvt.shading: 30
+! Comp Shading
+URxvt.depth: 32
+URxvt.background: rgba:1000/1000/0900/dd00
+
+! Color Palette
+URxvt.foreground: #f8f8f2
+! Black
+URxvt.color0:  #0f0f0d
+! Red
+URxvt.color1:  #d25252
+! Green
+URxvt.color2:  #86df32
+! Yellow
+URxvt.color3:  #e6db74
+! Blue
+URxvt.color4:  #1e90ff
+! Magenta
+URxvt.color5:  #d197d9
+! Cyan
+URxvt.color6:  #bed6ff
+! White
+URxvt.color7:  #f8f8f2
+! Light Black ###
+URxvt.color8:  #4c4c4c
+! Light Red ###
+! URxvt.color9:  #caff5e
+URxvt.color9: #ff5e5e
+! Light Green ###
+URxvt.color10: #00ff00
+! Light Yellow ###
+URxvt.color11: #ffff00
+! Light Blue ###
+URxvt.color12: #4682b4
+! Light Magenta ###
+URxvt.color13: #c57dff
+! Light Cyan
+URxvt.color14: #66d9ef
+! Light White ###
+URxvt.color15: #ffffff
+
+! Font
+URxvt.font:           xft:DejaVu Sans Mono:pixelsize=15:style=Regular
+URxvt.boldFont:       xft:DejaVu Sans Mono:pixelsize=15:style=Bold
+URxvt.italicFont:     xft:DejaVu Sans Mono:pixelsize=15:style=Oblique
+URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=15:style=Bold Oblique
+URxvt.letterSpace:    0
+
+!Clipboard Mod
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+
+!End
