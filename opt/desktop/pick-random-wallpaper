@@ -1,0 +1,6 @@
+#! /bin/bash
+
+background_dir=/unified-setup/opt/desktop/wallpapers
+background=$( ls $background_dir | sort -R | head -n 1)
+rm -f /tmp/random-wallpaper.jpg
+ln -s $background_dir/$background /tmp/random-wallpaper.jpg
