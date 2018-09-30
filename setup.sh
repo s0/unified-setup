@@ -34,12 +34,17 @@ echo "Installing AUR packages"
 # setting up config
 ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish
 
+echo "Setting up root user"
+chsh -s /usr/bin/fish
+
 echo "Setting up users"
 useradd sam
 mkdir ~sam
 chown sam:sam ~sam
+chsh -s /usr/bin/fish sam
 echo "Enter password for user sam"
 passwd sam
+
 
 # TODO: link /home files (for all users)
 
