@@ -2,6 +2,9 @@
 
 export PATH=~/.bin:/unified-setup/opt/desktop/bin:$PATH;
 
+# lightdm will not have a wallpaper spread across screens
+wm-switch-wallpaper;
+
 [ -r /opt/desktop/xsession-extra ] && source /opt/desktop/xsession-extra;
 
 xcompmgr &
