@@ -15,7 +15,8 @@ git submodule update --init
 echo "Installing Packages"
 
 # NON GUI
-pacman -S base-devel python3 git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish wget
+pacman -S base-devel python3 python-pip git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish wget
+pip install passphraseme
 # GUI
 pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator dunst
 
