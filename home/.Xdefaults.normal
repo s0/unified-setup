@@ -54,6 +54,12 @@ URxvt.letterSpace:    0
 !Clipboard Mod
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
-URxvt.perl-ext-common: default,clipboard
+
+!URL Matching
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+
+URxvt.perl-ext-common: default,clipboard,matcher
 
 !End
