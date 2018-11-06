@@ -11,4 +11,6 @@ xcompmgr &
 
 (sleep 1s && python3 /unified-setup/opt/desktop/i3-plugin.py) &
 
+(node /unified-setup/opt/desktop/status.js) &
+
 i3;
