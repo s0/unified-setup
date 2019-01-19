@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# pick wallpaper for lightdm-gtk
+/unified-setup/opt/desktop/pick-random-wallpaper
+
+# If there's machine specific config, do that
+if [ -f /opt/desktop/display-setup-extra ]; then /opt/desktop/display-setup-extra; fi
