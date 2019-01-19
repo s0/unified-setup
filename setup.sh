@@ -20,6 +20,20 @@ pip install passphraseme
 # GUI
 pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator dunst pulseaudio pavucontrol file-roller
 
+
+echo "Setting up root user"
+chsh -s /usr/bin/fish
+
+# user sam must be set up before installing any AUR packages
+echo "Setting up users"
+useradd sam
+mkdir ~sam
+chown sam:sam ~sam
+chsh -s /usr/bin/fish sam
+echo "Enter password for user sam"
+passwd sam
+
+
 # Downgrade gtk to 3.22 for compatibility with Vertex Theme
 
 pushd /var/cache/pacman/pkg/
@@ -58,18 +72,6 @@ cp /unified-setup/usr/lib/urxvt/perl/clipboard /usr/lib/urxvt/perl/clipboard
 ln -s /unified-setup/etc/gtk-2.0/gtkrc /etc/gtk-2.0/gtkrc
 ln -s /unified-setup/etc/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
 ln -sf /unified-setup/etc/i3/config /etc/i3/config
-
-echo "Setting up root user"
-chsh -s /usr/bin/fish
-
-echo "Setting up users"
-useradd sam
-mkdir ~sam
-chown sam:sam ~sam
-chsh -s /usr/bin/fish sam
-echo "Enter password for user sam"
-passwd sam
-
 
 # TODO: link /home files (for all users)
 
