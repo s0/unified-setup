@@ -76,5 +76,6 @@ ln -s /unified-setup/etc/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
 ln -sf /unified-setup/etc/i3/config /etc/i3/config
 ln -s /unified-setup/etc/gitconfig /etc/gitconfig
 ln -s /unified-setup/etc/tmux.conf /etc/tmux.conf
+ln -s /unified-setup/etc/xdg/dunstrc /etc/xdg/dunstrc
 
 popd
