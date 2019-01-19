@@ -16,7 +16,7 @@ bash
 echo "Installing Packages"
 
 # NON GUI
-pacman -S base-devel python3 python-pip git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish wget openssh
+pacman -S base-devel python3 python-pip git emacs-nox tmux pkgfile net-tools rxvt-unicode-terminfo fish wget openssh bind-tools
 pip install passphraseme
 # GUI
 pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu ttf-droid feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator dunst pulseaudio pavucontrol file-roller accountsservice nodejs
