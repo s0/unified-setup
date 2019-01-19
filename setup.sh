@@ -5,12 +5,13 @@ pushd /unified-setup
 git submodule update --init
 
 #Configure networking using systemd-networkd
-#systemctl enable systemd-networkd
+systemctl enable systemd-networkd
 #systemctl start systemd-networkd
-#systemctl enable systemd-resolved
+systemctl enable systemd-resolved
 #systemctl start systemd-resolved
 #ln -sf /run/systemd/resolve/resolv.conf /etc/resolv.conf
-#TODO: Configure network interfaces in /etc/systemd/network/
+echo "Configure network interfaces in /etc/systemd/network/, then exit"
+bash
 
 echo "Installing Packages"
 
@@ -19,7 +20,6 @@ pacman -S base-devel python3 python-pip git emacs-nox tmux pkgfile net-tools rxv
 pip install passphraseme
 # GUI
 pacman -S i3 python-setuptools xorg-server xorg lightdm lightdm-gtk-greeter rxvt-unicode chromium ttf-dejavu feh xcompmgr xclip dmenu redshift numix-gtk-theme thunar gnome-calculator dunst pulseaudio pavucontrol file-roller accountsservice
-
 
 echo "Setting up root user"
 chsh -s /usr/bin/fish
@@ -32,7 +32,6 @@ chown sam:sam ~sam
 chsh -s /usr/bin/fish sam
 echo "Enter password for user sam"
 passwd sam
-
 
 # Downgrade gtk to 3.22 for compatibility with Vertex Theme
 
