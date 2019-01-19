@@ -64,6 +64,9 @@ ln -s /unified-setup/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 echo "Installing AUR packages"
 /unified-setup/aur/i3ipc-python-install
 /unified-setup/aur/aurget-install
+# snapd dependencies
+pacman -S go go-tools python-docutils apparmor squashfs-tools
+/unified-setup/aur/snapd-install
 
 # setting up config
 ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish

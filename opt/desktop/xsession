@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export PATH=~/.bin:/unified-setup/opt/desktop/bin:$PATH;
+export PATH=~/.bin:/unified-setup/opt/desktop/bin:$PATH:/snap/bin;
 
 # lightdm will not have a wallpaper spread across screens
 wm-switch-wallpaper;

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+build_user=sam
+build_dir=/tmp/snapd
+
+mkdir $build_dir
+chown $build_user $build_dir
+
+cp /unified-setup/aur/snapd-PKGBUILD ${build_dir}/PKGBUILD
+cp /unified-setup/aur/snapd-snapd.install ${build_dir}/snapd.install
+su - $build_user -c "cd ${build_dir}; git clone /unified-setup/external/snapd ./src; makepkg"
+
+cp /tmp/snapd/snapd-2.37-1-x86_64.pkg.tar.xz /var/cache/pacman/pkg/
+pacman -U /var/cache/pacman/pkg/snapd-2.37-1-x86_64.pkg.tar.xz
+ln -s /var/lib/snapd/snap /snap
+systemctl start snapd
+systemctl enable snapd
