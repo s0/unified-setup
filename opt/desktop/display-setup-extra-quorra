@@ -5,5 +5,3 @@ xrandr --output DP-2 --auto --pos 0x0 --output DP-1 --auto --pos 2560x400
 # setup touch screen
 touch_input=$(xinput | grep CoolTouchR | sed -E "s/.*CoolTouchR System\s+id=([0-9]+).*/\1/")
 xinput --map-to-output $touch_input DP-2
-# pick wallpaper for lightdm-gtk
-/unified-setup/opt/desktop/pick-random-wallpaper
