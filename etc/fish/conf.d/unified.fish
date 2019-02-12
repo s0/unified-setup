@@ -114,7 +114,7 @@ function geu
       echo "can't open in eclipse"
       echo $path
     else
-      a $path
+      vscode $path
     end
   end
 end
