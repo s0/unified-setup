@@ -69,6 +69,7 @@ set -x LS_OPTIONS '--color=auto --group-directories-first -h --time-style=long-i
 # =======================
 
 alias a='atom'
+alias v='vscode'
 alias e=$EDITOR
 alias x='xdg-open'
 alias rm='rm -i'
@@ -119,7 +120,7 @@ function geu
   end
 end
 
-function agrep
+function vgrep
   for result in (grep -Rn $argv[1])
     set file_and_line (echo $result | sed -E 's/^([^:]*)\:([0-9]+)\:(.*)$/\1:\2/')
     set match (echo $result | sed -E 's/^([^:]*)\:([0-9]+)\:(.*)$/\3/')
@@ -129,7 +130,7 @@ function agrep
 
     switch $confirm
       case '' Y y
-        a $file_and_line
+        v -g $file_and_line
     end
   end
 end
