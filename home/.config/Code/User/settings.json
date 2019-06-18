@@ -1,0 +1,17 @@
+{
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "window.zoomLevel": 0,
+    "editor.tabSize": 2,
+    "[typescript]": {
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2
+    },
+    "[typescriptreact]": {
+      "editor.detectIndentation": false,
+      "editor.tabSize": 2
+    },
+    "terminal.integrated.copyOnSelection": true,
+}
