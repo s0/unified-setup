@@ -64,6 +64,8 @@ ln -s /unified-setup/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
 echo "Installing AUR packages"
 /unified-setup/aur/i3ipc-python-install
 /unified-setup/aur/aurget-install
+# razer keyboard
+/unified-setup/aur/openrazer-meta-install
 # snapd dependencies
 pacman -S go go-tools python-docutils apparmor squashfs-tools
 /unified-setup/aur/snapd-install
