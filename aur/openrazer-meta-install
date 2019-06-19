@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# install dependency python-notify2
+# install dependencies
+pacman -S linux-headers
 /unified-setup/aur/python-notify2-install
 
 build_user=sam
