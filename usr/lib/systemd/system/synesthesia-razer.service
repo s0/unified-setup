@@ -1,0 +1,10 @@
+[Unit]
+Description=Synesthesia Server
+
+[Service]
+Type=simple
+ExecStart=node /unified-setup/opt/synesthesia/synesthesia/synesthesia-razer/build
+User=sam
+
+[Install]
+WantedBy=multi-user.target

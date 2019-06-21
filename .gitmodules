@@ -10,3 +10,6 @@
 [submodule "external/numix-folders"]
 	path = external/numix-folders
 	url = https://github.com/numixproject/numix-folders
+[submodule "opt/synesthesia/synesthesia"]
+	path = opt/synesthesia/synesthesia
+	url = https://github.com/synesthesia-project/synesthesia

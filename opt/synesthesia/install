@@ -1,0 +1,12 @@
+#! /bin/bash
+
+echo "Building & Installing Synesthesia"
+
+yarn --cwd /unified-setup/opt/synesthesia/synesthesia
+yarn --cwd /unified-setup/opt/synesthesia/synesthesia run build
+
+ln -s /unified-setup/usr/lib/systemd/system/synesthesia.service /usr/lib/systemd/system/
+ln -s /unified-setup/usr/lib/systemd/system/synesthesia-razer.service /usr/lib/systemd/system/
+
+systemctl enable synesthesia.service
+systemctl enable synesthesia-razer.service

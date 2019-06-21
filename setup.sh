@@ -2,7 +2,7 @@
 
 pushd /unified-setup
 
-git submodule update --init
+git submodule update --init --recursive
 
 #Configure networking using systemd-networkd
 systemctl enable systemd-networkd
@@ -79,5 +79,8 @@ ln -sf /unified-setup/etc/i3/config /etc/i3/config
 ln -s /unified-setup/etc/gitconfig /etc/gitconfig
 ln -s /unified-setup/etc/tmux.conf /etc/tmux.conf
 ln -s /unified-setup/etc/xdg/dunstrc /etc/xdg/dunstrc
+
+# install synesthesia
+/unified-setup/opt/synesthesia/install
 
 popd

@@ -1,0 +1,10 @@
+[Unit]
+Description=Synesthesia Server
+
+[Service]
+Type=simple
+ExecStart=yarn --cwd /unified-setup/opt/synesthesia/synesthesia run server /home/sam/synesthesia-data
+User=sam
+
+[Install]
+WantedBy=multi-user.target
