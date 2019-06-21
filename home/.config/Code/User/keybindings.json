@@ -1,6 +1,11 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
+    "key": "ctrl+f5",
+    "command": "workbench.action.reloadWindow",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "ctrl+shift+right",
     "command": "workbench.action.terminal.focusNextPane",
     "when": "terminalFocus"
