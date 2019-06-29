@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 pushd /unified-setup
 
 git submodule update --init --recursive
@@ -36,14 +38,14 @@ passwd sam
 # Downgrade gtk to 3.22 for compatibility with Vertex Theme
 
 pushd /var/cache/pacman/pkg/
-wget https://archive.archlinux.org/packages/g/gtk3/gtk3-3.22.9-1-x86_64.pkg.tar.xz
-wget https://archive.archlinux.org/packages/g/gtk3/gtk3-3.22.9-1-x86_64.pkg.tar.xz.sig
-pacman-key -v gtk3-3.22.9-1-x86_64.pkg.tar.xz.sig
+wget https://archive.archlinux.org/packages/g/gtk3/gtk3-3.22.30-1-x86_64.pkg.tar.xz
+wget https://archive.archlinux.org/packages/g/gtk3/gtk3-3.22.30-1-x86_64.pkg.tar.xz.sig
+pacman-key -v gtk3-3.22.30-1-x86_64.pkg.tar.xz.sig
 echo ""
 echo ""
 echo "######### WARNING: Check signature above before installing"
 echo ""
-pacman -U gtk3-3.22.9-1-x86_64.pkg.tar.xz
+pacman -U gtk3-3.22.30-1-x86_64.pkg.tar.xz.sig
 popd
 
 echo "installing themes"
