@@ -1,9 +1,9 @@
 # From: https://www.lammertbies.nl/comm/info/iptables.html
 
 *filter
-:INPUT ACCEPT [2718:682440]
+:INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [1478:128159]
+:OUTPUT ACCEPT [0:0]
 
 :Always - [0:0]
 :Allow - [0:0]

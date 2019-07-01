@@ -1,14 +1,13 @@
 # From: https://www.lammertbies.nl/comm/info/iptables.html
 
 *filter
-:INPUT ACCEPT [2718:682440]
-:FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [1478:128159]
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
 
 :Always - [0:0]
 :Allow - [0:0]
 :Bogus - [0:0]
-:Enemies - [0:0]
 :Friends - [0:0]
 
 -A INPUT -j Bogus
@@ -21,11 +20,6 @@
 
 -A Bogus -p tcp -m tcp --tcp-flags SYN,FIN SYN,FIN -j DROP
 -A Bogus -p tcp -m tcp --tcp-flags SYN,RST SYN,RST -j DROP
--A Bogus -s 169.254.0.0/16 -j DROP
--A Bogus -s 172.16.0.0/12 -j DROP
--A Bogus -s 192.0.2.0/24 -j DROP
--A Bogus -s 192.168.0.0/16 -j DROP
--A Bogus -s 10.0.0.0/8 -j DROP
 
 -A Always -p udp --dport 123 -j ACCEPT
 -A Always -m state --state ESTABLISHED,RELATED -j ACCEPT
@@ -35,9 +29,7 @@
 # -A Friends -s 123.123.123.123 -j ACCEPT
 -A Friends -j DROP
 
--A Allow -p icmp --icmp-type echo-request -j Friends
--A Allow -p icmp --icmp-type any -m limit --limit 1/second -j ACCEPT
--A Allow -p icmp --icmp-type any -j DROP
+-A Allow -p icmp -j ACCEPT
 -A Allow -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
 -A Allow -j DROP
 
