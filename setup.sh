@@ -82,6 +82,12 @@ ln -s /unified-setup/etc/gitconfig /etc/gitconfig
 ln -s /unified-setup/etc/tmux.conf /etc/tmux.conf
 ln -s /unified-setup/etc/xdg/dunstrc /etc/xdg/dunstrc
 
+# Setting up firewall
+ln -sf /unified-setup/etc/iptables/iptables.rules /etc/iptables/iptables.rules
+ln -sf /unified-setup/etc/iptables/ip6tables.rules /etc/iptables/ip6tables.rules
+systemctl enable iptables
+systemctl enable ip6tables
+
 # install synesthesia
 /unified-setup/opt/synesthesia/install
 
