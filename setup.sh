@@ -45,7 +45,7 @@ echo ""
 echo ""
 echo "######### WARNING: Check signature above before installing"
 echo ""
-pacman -U gtk3-3.22.30-1-x86_64.pkg.tar.xz.sig
+pacman -U gtk3-3.22.30-1-x86_64.pkg.tar.xz
 popd
 
 echo "installing themes"
@@ -69,7 +69,7 @@ echo "Installing AUR packages"
 # razer keyboard
 /unified-setup/aur/openrazer-meta-install
 # snapd dependencies
-pacman -S go go-tools python-docutils apparmor squashfs-tools
+pacman -S go go-tools python-docutils apparmor squashfs-tools xfsprogs
 /unified-setup/aur/snapd-install
 
 # setting up config
