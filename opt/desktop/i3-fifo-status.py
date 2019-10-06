@@ -34,7 +34,7 @@ class StatusListener(threading.Thread):
                 except:
                     sys.stderr.write("Received Invalid Status: " + status_string)
                     sys.stderr.flush()
-
+                time.sleep(0.3)
 
 listener = StatusListener('/tmp/status_fifo')
 listener.start()
