@@ -14,4 +14,9 @@
       "editor.tabSize": 2
     },
     "terminal.integrated.copyOnSelection": true,
+    "editor.wordWrap": "on",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "editor.acceptSuggestionOnEnter": "off",
 }
