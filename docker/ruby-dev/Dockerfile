@@ -11,7 +11,8 @@ RUN useradd -m $UNAME --uid $UID
 RUN chsh -s /bin/bash $UNAME
 
 # Specific dependencies for this environment
-RUN pacman --noconfirm -Sy ruby ruby-bundler
+RUN pacman --noconfirm -S ruby ruby-bundler
+RUN pacman --noconfirm -S nodejs npm
 
 # Switch over to the user
 USER $UNAME
