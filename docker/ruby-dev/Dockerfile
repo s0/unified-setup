@@ -1,7 +1,7 @@
 FROM archlinux/base
 
 # Base dependencies
-RUN pacman --noconfirm -Sy fish git python awk
+RUN pacman --noconfirm -Sy fish git python awk base-devel
 
 ARG UNAME=dev
 ARG UID=1000
