@@ -1,0 +1,10 @@
+#! /bin/bash
+
+docker run --rm \
+  --publish 8080:8080 \
+  -v $HOME:$HOME \
+  -v /etc/fish:/etc/fish \
+  -v /unified-setup:/unified-setup \
+  -w $PWD \
+  -i -t ruby-dev \
+  fish
