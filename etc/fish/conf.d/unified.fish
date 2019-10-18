@@ -82,6 +82,8 @@ alias grep='grep --color'
 alias su='su -l'
 alias aurget='aurget --config /unified-setup/home/.config/aurgetrc'
 
+alias ruby-dev='/unified-setup/docker/ruby-dev/ruby-dev'
+
 abbr --add g 'git'
 abbr --add gs 'git status'
 abbr --add ga 'git add -A'
