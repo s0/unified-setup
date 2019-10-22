@@ -7,3 +7,5 @@
 	deltaBaseCacheLimit = 1G
 [color]
 	ui = true
+[format]
+	pretty = full

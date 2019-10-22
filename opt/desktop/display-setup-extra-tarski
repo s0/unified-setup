@@ -1,4 +1,4 @@
 #! /bin/bash
 
 #setup screens
-xrandr --output eDP1 --off --output DP2-1-8 --auto --pos 0x0 --output DP2-2 --auto --pos 2560x0 || echo "oh well"
+xrandr --output DP3-1-8 --auto --pos 0x0 --output DP3-2 --auto --pos 2560x0 --output eDP1 --off || echo "oh well"
