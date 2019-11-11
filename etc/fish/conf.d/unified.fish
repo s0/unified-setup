@@ -105,7 +105,7 @@ end
 function gpr --description "check out the given pull request"
   set PR $argv[1]
   git update-ref -d refs/pull/$PR/head
-  git fetch semmle refs/pull/$PR/head:refs/pull/$PR/head
+  git fetch origin refs/pull/$PR/head:refs/pull/$PR/head
   git checkout refs/pull/$PR/head
 end
 
