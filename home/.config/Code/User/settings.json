@@ -19,4 +19,10 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "java.configuration.checkProjectSettingsExclusions": false,
     "editor.acceptSuggestionOnEnter": "off",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.rulers": [
+      80,
+      120
+    ]
 }
