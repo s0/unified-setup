@@ -34,7 +34,7 @@ font-4 = Font Awesome 5 Brands:pixelsize=15;3
 
 modules-left = i3
 modules-center = i3touchmenu keyboard brightup brightdown
-modules-right = volume volmute voldown volup wireless-network wired-network cpu memory battery powermenu
+modules-right = volume volmute voldown volup wireless-network wired-network cpu memory battery
 
 [module/i3]
 type = internal/i3
@@ -213,40 +213,6 @@ type = internal/pulseaudio
 label-muted = muted
 label-muted-foreground = ${colors.accent}
 
-[module/powermenu]
-type = custom/menu
-
-format-padding = 3
-format-foreground = #fff
-
-label-open = Power
-label-close = Close
-label-separator = " - "
-
-menu-0-0 = Power Off
-menu-0-0-foreground = ${colors.accent}
-menu-0-0-exec = menu-open-1
-menu-0-1 = Log Off
-menu-0-1-foreground = ${colors.accent}
-menu-0-1-exec = menu-open-2
-menu-0-2 = Lock
-menu-0-2-foreground = ${colors.accent}
-menu-0-2-exec = wm-lock
-
-menu-1-0 = Cancel
-menu-1-0-foreground = ${colors.accent}
-menu-1-0-exec = menu-open-0
-menu-1-1 = Power Off
-menu-1-1-foreground = ${colors.accent}
-menu-1-1-exec = systemctl poweroff
-
-menu-2-0 = Cancel
-menu-2-0-foreground = ${colors.accent}
-menu-2-0-exec = menu-open-0
-menu-2-1 = Log Off
-menu-2-1-foreground = ${colors.accent}
-menu-2-1-exec = killall i3
-
 [module/i3touchmenu]
 ;; inspired by: https://github.com/ssmolkin1/i3touchmenu/blob/master/i3touchmenu
 type = custom/menu
@@ -281,8 +247,24 @@ menu-0-2-exec = menu-open-3
 menu-0-3 = "    "
 menu-0-3-exec = menu-open-4
 
+;; Lock
+menu-0-4 = "    "
+menu-0-4-foreground = ${colors.accent}
+menu-0-4-exec = wm-lock
+
+;; Log Off
+menu-0-5 = "    "
+menu-0-5-foreground = ${colors.accent}
+menu-0-5-exec = menu-open-6
+
+;; Power Off
+menu-0-6 = "    "
+menu-0-6-foreground = ${colors.accent}
+menu-0-6-exec = menu-open-5
+
 ;; Launcher: Back to main menu
 menu-1-0 = "    "
+menu-1-0-foreground = ${colors.accent}
 menu-1-0-exec = menu-open-0
 
 menu-1-1="    "
@@ -296,6 +278,7 @@ menu-1-3-exec = dmenu_run &
 
 ;; Move: Back to main menu
 menu-2-0 = "    "
+menu-2-0-foreground = ${colors.accent}
 menu-2-0-exec = menu-open-0
 
 ;; Move: Left
@@ -316,6 +299,7 @@ menu-2-4-exec = i3-msg 'move down'
 
 ;; Move to workspace: Back to main menu
 menu-3-0 = "    "
+menu-3-0-foreground = ${colors.accent}
 menu-3-0-exec = menu-open-0
 
 ;; Move to workspace: 1
@@ -360,6 +344,7 @@ menu-3-10-exec = i3-msg 'move container to workspace 10'
 
 ;; Resize: Back to main menu
 menu-4-0 = "    "
+menu-4-0-foreground = ${colors.accent}
 menu-4-0-exec = menu-open-0
 
 ;; Resize: Grow height
@@ -377,3 +362,17 @@ menu-4-3-exec = i3-msg 'resize grow width 5 px or 5 ppt'
 ;; Resize: Shrink width
 menu-4-4 = "   width  "
 menu-4-4-exec = i3-msg 'resize shrink width 5 px or 5 ppt'
+
+menu-5-0 = "    "
+menu-5-0-foreground = ${colors.accent}
+menu-5-0-exec = menu-open-0
+menu-5-1 = Power Off
+menu-5-1-foreground = ${colors.accent}
+menu-5-1-exec = systemctl poweroff
+
+menu-6-0 = "    "
+menu-6-0-foreground = ${colors.accent}
+menu-6-0-exec = menu-open-0
+menu-6-1 = Log Off
+menu-6-1-foreground = ${colors.accent}
+menu-6-1-exec = killall i3
