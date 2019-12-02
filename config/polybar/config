@@ -1,7 +1,8 @@
 [colors]
 accent = #fba922
 background = #1c1c1c
-foreground = #eefafafa
+foreground = #eeeeee
+icon-foreground = #aaaaaa
 
 [bar/bottom]
 monitor = DP-2
@@ -27,13 +28,13 @@ module-margin-right = 6
 
 font-0 = NotoSans-Regular:size=8;0
 font-1 = Unifont:size=5;0
-font-2 = FontAwesome:size=8;0
-font-3 = NotoSans-Regular:size=8;-1
-font-4 = Unifont:size=5;0
-font-5 = Termsynu:size=7;0
+font-2 = Font Awesome 5 Free:pixelsize=15;3
+font-3 = Font Awesome 5 Free Solid:pixelsize=15;3
+font-4 = Font Awesome 5 Brands:pixelsize=15;3
 
 modules-left = i3
-modules-right = wireless-network wired-network cpu memory battery powermenu
+modules-center = keyboard brightup brightdown
+modules-right = volume volmute voldown volup wireless-network wired-network cpu memory battery powermenu
 
 [module/i3]
 type = internal/i3
@@ -46,24 +47,20 @@ label-focused = %name%
 label-focused-foreground = #f3f3f3
 label-focused-background = #3f3f3f
 label-focused-underline = #9f78e1
-label-focused-font = 4
 label-focused-padding = 4
 
 label-unfocused = %name%
 label-unfocused-underline = #555555
-label-unfocused-font = 4
 label-unfocused-padding = 4
 
 label-urgent = %name%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
 label-urgent-underline = #9b0a20
-label-urgent-font = 4
 label-urgent-padding = 4
 
 label-visible = %name%
 label-visible-foreground = #55ffffff
-label-visible-font = 4
 label-visible-padding = 4
 
 
@@ -74,7 +71,6 @@ interval = 1.5
 format = <label> <ramp-coreload>
 
 label = CPU
-label-font = 3
 label-foreground = #99
 
 ramp-coreload-0 = ▁
@@ -108,7 +104,6 @@ interval = 0.2
 format = <label> <bar-used>
 
 label = RAM
-label-font = 3
 label-foreground = #99
 
 bar-used-width = 30
@@ -176,6 +171,47 @@ label-charging-font = 3
 label-discharging-font = 3
 label-full =
 ;label-full-font = 3
+
+[module/keyboard]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left = onboard &
+
+[module/brightdown]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=xbacklight -dec 10
+
+[module/brightup]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=xbacklight -inc 10
+
+[module/volmute]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+[module/voldown]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+[module/volup]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+[module/volume]
+type = internal/pulseaudio
+label-muted = muted
+label-muted-foreground = ${colors.accent}
 
 [module/powermenu]
 type = custom/menu

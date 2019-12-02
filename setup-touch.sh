@@ -5,7 +5,7 @@ set -e
 pushd /unified-setup
 
 # Packages
-sudo pacman -S onboard
+sudo pacman -S onboard ttf-font-awesome
 
 # Onboard Config
 gsettings set org.onboard theme '/unified-setup/config/onboard/Unified.theme'
