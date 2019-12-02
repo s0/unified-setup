@@ -12,7 +12,7 @@ xcompmgr &
 # Load X resources file
 xrdb /unified-setup/home/.Xdefaults &
 
-(sleep 1s && python3 /unified-setup/opt/desktop/i3-plugin.py) &
+(sleep 5s && python3 /unified-setup/opt/desktop/i3-plugin.py) &
 
 (node /unified-setup/opt/desktop/status.js) &
 
