@@ -8,7 +8,7 @@ icon-foreground = #aaaaaa
 monitor = ${env:MONITOR:}
 bottom = true
 width = 100%
-height = 50
+height = 70
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -18,19 +18,18 @@ overline-color = ${colors.accent}
 underline-size = 3
 underline-color = ${colors.accent}
 
-border-top = 0
-
 spacing = 3
 padding-left = 0
 padding-right = 4
 module-margin-left = 0
 module-margin-right = 6
 
-font-0 = NotoSans-Regular:size=8;0
-font-1 = Unifont:size=5;0
-font-2 = Font Awesome 5 Free:pixelsize=15;3
-font-3 = Font Awesome 5 Free Solid:pixelsize=15;3
-font-4 = Font Awesome 5 Brands:pixelsize=15;3
+font-0 = DejaVu Sans:size=14;3
+font-1 = Font Awesome 5 Free:pixelsize=20;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=20;3
+font-3 = Font Awesome 5 Brands:pixelsize=20;3
+font-4 = DejaVu Sans Mono:size=4;0
+font-5 = DejaVu Sans Mono:size=10;2
 
 modules-left = i3
 modules-center = i3touchmenu keyboard brightup brightdown
@@ -74,28 +73,28 @@ label = CPU
 label-foreground = #99
 
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
+ramp-coreload-0-font = 6
 ramp-coreload-0-foreground = #aaff77
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
+ramp-coreload-1-font = 6
 ramp-coreload-1-foreground = #aaff77
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
+ramp-coreload-2-font = 6
 ramp-coreload-2-foreground = #aaff77
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
+ramp-coreload-3-font = 6
 ramp-coreload-3-foreground = #aaff77
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
+ramp-coreload-4-font = 6
 ramp-coreload-4-foreground = #fba922
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
+ramp-coreload-5-font = 6
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
+ramp-coreload-6-font = 6
 ramp-coreload-6-foreground = #ff5555
 ramp-coreload-7 = █
-ramp-coreload-7-font = 2
+ramp-coreload-7-font = 6
 ramp-coreload-7-foreground = #ff5555
 
 [module/memory]
@@ -113,7 +112,7 @@ bar-used-foreground-1 = #2f8419
 bar-used-foreground-2 = #f5a70a
 bar-used-foreground-3 = #ed5456
 bar-used-indicator = █
-bar-used-indicator-font = 5
+bar-used-indicator-font = 6
 bar-used-indicator-foreground = #fff
 bar-used-fill = █
 bar-used-fill-font = 5
@@ -166,11 +165,7 @@ type = internal/battery
 full-at = 98
 format-charging = %{T3}Battery <label-charging> %{T-}
 format-discharging = %{T3}Battery <label-discharging> %{T-}
-;format-full = %{T3}Battery <label-full>
-label-charging-font = 3
-label-discharging-font = 3
 label-full =
-;label-full-font = 3
 
 [module/keyboard]
 type=custom/text
