@@ -1,8 +1,63 @@
 [colors]
 accent = #fba922
 background = #1c1c1c
+background-dark = #111
 foreground = #eeeeee
 icon-foreground = #aaaaaa
+
+[bar/top]
+monitor = ${env:MONITOR:}
+bottom = false
+width = 100%
+height = 40
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = DejaVu Sans:size=12;3
+font-1 = Font Awesome 5 Free:pixelsize=15;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=15;3
+font-3 = Font Awesome 5 Brands:pixelsize=15;3
+;; RAM Bars
+font-4 = DejaVu Sans Mono:size=4;0
+font-5 = DejaVu Sans Mono:size=10;2
+;; CPU Bars
+font-6 = DejaVu Sans Mono:size=6;0
+
+modules-left = i3
+modules-right = wireless-network wired-network cpu memory battery date time
+
+[module/time]
+type = internal/date
+interval = 1
+format-padding = 1
+format-background = ${colors.background-dark}
+format-foreground = #aaaaaa
+date = "   %H:%M:%S   "
+
+
+[module/date]
+type = internal/date
+interval = 5
+format-padding = 1
+format-background = ${colors.background-dark}
+format-foreground = ${colors.icon-foreground}
+date = "     %Y-%m-%d%"
+
+[module/battery]
+type = internal/battery
+
+full-at = 98
+format-charging = "<ramp-capacity>   <label-charging>"
+format-discharging = "<ramp-capacity>   <label-discharging>"
+format-discharging-padding = 4
+label-full = Full
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
 [bar/bottom]
 monitor = ${env:MONITOR:}
@@ -28,12 +83,10 @@ font-0 = DejaVu Sans:size=14;3
 font-1 = Font Awesome 5 Free:pixelsize=20;3
 font-2 = Font Awesome 5 Free Solid:pixelsize=20;3
 font-3 = Font Awesome 5 Brands:pixelsize=20;3
-font-4 = DejaVu Sans Mono:size=4;0
-font-5 = DejaVu Sans Mono:size=10;2
 
 modules-left = i3
 modules-center = i3touchmenu keyboard brightup brightdown
-modules-right = volume volmute voldown volup wireless-network wired-network cpu memory battery
+modules-right = volume volmute voldown volup
 
 [module/i3]
 type = internal/i3
@@ -67,42 +120,46 @@ label-visible-padding = 4
 type = internal/cpu
 interval = 1.5
 
-format = <label> <ramp-coreload>
+format = "<label><ramp-coreload>"
+format-padding = 4
 
-label = CPU
+label = "   "
 label-foreground = #99
 
 ramp-coreload-0 = ▁
-ramp-coreload-0-font = 6
+ramp-coreload-0-font = 7
 ramp-coreload-0-foreground = #aaff77
 ramp-coreload-1 = ▂
-ramp-coreload-1-font = 6
+ramp-coreload-1-font = 7
 ramp-coreload-1-foreground = #aaff77
 ramp-coreload-2 = ▃
-ramp-coreload-2-font = 6
+ramp-coreload-2-font = 7
 ramp-coreload-2-foreground = #aaff77
 ramp-coreload-3 = ▄
-ramp-coreload-3-font = 6
+ramp-coreload-3-font = 7
 ramp-coreload-3-foreground = #aaff77
 ramp-coreload-4 = ▅
-ramp-coreload-4-font = 6
+ramp-coreload-4-font = 7
 ramp-coreload-4-foreground = #fba922
 ramp-coreload-5 = ▆
-ramp-coreload-5-font = 6
+ramp-coreload-5-font = 7
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
-ramp-coreload-6-font = 6
+ramp-coreload-6-font = 7
 ramp-coreload-6-foreground = #ff5555
 ramp-coreload-7 = █
-ramp-coreload-7-font = 6
+ramp-coreload-7-font = 7
 ramp-coreload-7-foreground = #ff5555
 
 [module/memory]
 type = internal/memory
 interval = 0.2
-format = <label> <bar-used>
 
-label = RAM
+format = "<label><bar-used>"
+format-background = ${colors.background-dark}
+format-padding = 4
+
+label = "   "
 label-foreground = #99
 
 bar-used-width = 30
@@ -126,16 +183,11 @@ interface = wlan0
 interval = 2.0
 ping-interval = 10
 
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
-label-disconnected =    not connected
+format-connected-background = ${colors.background-dark}
+format-connected-padding = 4
+label-connected = "   %essid%"
+label-disconnected = "   not connected"
 label-disconnected-foreground = #66
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
 
 animation-packetloss-0 = 
 animation-packetloss-0-foreground = #ffa64c
@@ -151,21 +203,6 @@ interval = 2.0
 label-connected =   %local_ip%
 label-disconnected = Ethernet disconnected
 label-disconnected-foreground = #66
-
-[module/clock]
-type = internal/date
-interval = 5
-format-padding = 5
-format-background = #000
-format-foreground = #fff
-date = %%{F#bb}%Y-%m-%d%%{F-}  %%{F#ee}%H:%M%%{F-}
-
-[module/battery]
-type = internal/battery
-full-at = 98
-format-charging = %{T3}Battery <label-charging> %{T-}
-format-discharging = %{T3}Battery <label-discharging> %{T-}
-label-full =
 
 [module/keyboard]
 type=custom/text
