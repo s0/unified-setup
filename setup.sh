@@ -55,13 +55,8 @@ echo "installing themes"
 echo "Updating pkgfile index"
 pkgfile --update
 
-echo "Setting up lightdm"
-systemctl enable lightdm
-ln -s /unified-setup/usr/share/xsessions/unified-setup.desktop /usr/share/xsessions/unified-setup.desktop
-rm /etc/lightdm/lightdm-gtk-greeter.conf
-rm /etc/lightdm/lightdm.conf
-ln -s /unified-setup/etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
-ln -s /unified-setup/etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
+# Setup Core Config
+/unified-setup/setup/config.sh
 
 echo "Installing AUR packages"
 /unified-setup/aur/i3ipc-python-install
@@ -71,23 +66,6 @@ echo "Installing AUR packages"
 # snapd dependencies
 pacman -S go go-tools python-docutils apparmor squashfs-tools xfsprogs
 /unified-setup/aur/snapd-install
-
-# setting up config
-ln -s /unified-setup/etc/fish/conf.d/unified.fish /etc/fish/conf.d/unified.fish
-cp /unified-setup/usr/lib/urxvt/perl/clipboard /usr/lib/urxvt/perl/clipboard
-ln -s /unified-setup/etc/gtk-2.0/gtkrc /etc/gtk-2.0/gtkrc
-ln -s /unified-setup/etc/gtk-3.0/settings.ini /etc/gtk-3.0/settings.ini
-ln -sf /unified-setup/etc/i3/config /etc/i3/config
-ln -s /unified-setup/etc/gitconfig /etc/gitconfig
-ln -s /unified-setup/etc/tmux.conf /etc/tmux.conf
-ln -s /unified-setup/etc/xdg/dunstrc /etc/xdg/dunstrc
-ln -s /unified-setup/etc/pacman.d/hooks /etc/pacman.d/hooks
-
-# Setting up firewall
-ln -sf /unified-setup/etc/iptables/iptables.rules /etc/iptables/iptables.rules
-ln -sf /unified-setup/etc/iptables/ip6tables.rules /etc/iptables/ip6tables.rules
-systemctl enable iptables
-systemctl enable ip6tables
 
 # install synesthesia
 /unified-setup/opt/synesthesia/install
