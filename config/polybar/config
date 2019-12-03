@@ -214,13 +214,13 @@ click-left = onboard &
 type=custom/text
 content="  "
 content-foreground=${colors.icon-foreground}
-click-left=xbacklight -dec 10
+click-left=xbacklight -dec 4%
 
 [module/brightup]
 type=custom/text
 content="  "
 content-foreground=${colors.icon-foreground}
-click-left=xbacklight -inc 10
+click-left=xbacklight -inc 4%
 
 [module/volmute]
 type=custom/text
