@@ -81,6 +81,7 @@ ln -sf /unified-setup/etc/i3/config /etc/i3/config
 ln -s /unified-setup/etc/gitconfig /etc/gitconfig
 ln -s /unified-setup/etc/tmux.conf /etc/tmux.conf
 ln -s /unified-setup/etc/xdg/dunstrc /etc/xdg/dunstrc
+ln -s /unified-setup/etc/pacman.d/hooks /etc/pacman.d/hooks
 
 # Setting up firewall
 ln -sf /unified-setup/etc/iptables/iptables.rules /etc/iptables/iptables.rules
