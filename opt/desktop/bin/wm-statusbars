@@ -1,0 +1,3 @@
+#! /bin/bash
+
+exec polybar -c /unified-setup/config/polybar/config top
