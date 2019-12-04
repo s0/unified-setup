@@ -16,4 +16,6 @@ xrdb /unified-setup/home/.Xdefaults &
 
 wm-statusbars &
 
+(sleep 1s && autorandr --change) &
+
 i3;
