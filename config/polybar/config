@@ -119,7 +119,7 @@ font-1 = Font Awesome 5 Free:pixelsize=20;3
 font-2 = Font Awesome 5 Free Solid:pixelsize=20;3
 font-3 = Font Awesome 5 Brands:pixelsize=20;3
 
-modules-left = brightup brightdown
+modules-left = backlight brightup brightdown
 modules-center = i3touchmenu keyboard
 modules-right = volume volmute voldown volup
 
@@ -251,6 +251,10 @@ type=custom/text
 content="  "
 content-foreground=${colors.icon-foreground}
 click-left = onboard &
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
 
 [module/brightdown]
 type=custom/text
