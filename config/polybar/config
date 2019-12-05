@@ -260,13 +260,15 @@ card = intel_backlight
 type=custom/text
 content="  "
 content-foreground=${colors.icon-foreground}
-click-left=xbacklight -dec 4%
+;; use without percent to be compatible with acpilight (an xbacklight alt)
+click-left=xbacklight -dec 4
 
 [module/brightup]
 type=custom/text
 content="  "
 content-foreground=${colors.icon-foreground}
-click-left=xbacklight -inc 4%
+;; use without percent to be compatible with acpilight (an xbacklight alt)
+click-left=xbacklight -inc 4
 
 [module/volmute]
 type=custom/text
