@@ -1,5 +1,7 @@
 [colors]
 green = #aaff77
+amber = #ffb555
+red = #ff5555
 
 accent = #fba922
 background = #1c1c1c
@@ -30,7 +32,7 @@ font-5 = DejaVu Sans Mono:size=10;2
 font-6 = DejaVu Sans Mono:size=6;0
 
 modules-left = i3
-modules-right = wireless-network wired-network cpu memory battery date time
+modules-right = wireless-network wired-network cpu memory temp battery date time
 
 [module/time]
 type = internal/date
@@ -65,6 +67,32 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
+
+[module/temp]
+type = internal/temperature
+
+format = "<ramp>   <label>"
+format-padding = 4
+format-background = ${colors.background-dark}
+format-warn = "<ramp>   <label-warn>"
+format-warn-padding = 4
+format-warn-background = ${colors.background-dark}
+
+base-temperature = 30
+warn-temperature = 60
+
+label-warn-foreground = ${colors.red}
+
+ramp-0 = 
+ramp-0-foreground = ${colors.green}
+ramp-1 = 
+ramp-1-foreground = ${colors.green}
+ramp-2 = 
+ramp-2-foreground = ${colors.amber}
+ramp-3 = 
+ramp-3-foreground = ${colors.amber}
+ramp-4 = 
+ramp-4-foreground = ${colors.red}
 
 [bar/bottom]
 monitor = ${env:MONITOR:}
@@ -133,6 +161,7 @@ interval = 1.5
 
 format = "<label><ramp-coreload>"
 format-padding = 4
+format-background = ${colors.background-dark}
 
 label = "   "
 label-foreground = #99
@@ -151,16 +180,16 @@ ramp-coreload-3-font = 7
 ramp-coreload-3-foreground = ${colors.green}
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 7
-ramp-coreload-4-foreground = #fba922
+ramp-coreload-4-foreground = ${colors.amber}
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 7
-ramp-coreload-5-foreground = #fba922
+ramp-coreload-5-foreground = ${colors.amber}
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 7
-ramp-coreload-6-foreground = #ff5555
+ramp-coreload-6-foreground = ${colors.red}
 ramp-coreload-7 = █
 ramp-coreload-7-font = 7
-ramp-coreload-7-foreground = #ff5555
+ramp-coreload-7-foreground = ${colors.red}
 
 [module/memory]
 type = internal/memory
@@ -196,13 +225,11 @@ ping-interval = 10
 
 format-connected = "   <label-connected>"
 format-connected-foreground = ${colors.icon-foreground}
-format-connected-background = ${colors.background-dark}
 format-connected-padding = 4
 label-connected = "%essid% (%signal%)"
 ;;label-connected-foreground = ${colors.green}
 
 format-disconnected = "   not connected"
-format-disconnected-background = ${colors.background-dark}
 format-disconnected-foreground = ${colors.foreground-faded}
 format-disconnected-padding = 4
 
@@ -213,7 +240,6 @@ interval = 2.0
 
 format-connected = "   <label-connected>"
 format-connected-foreground = ${colors.icon-foreground}
-format-connected-background = ${colors.background-dark}
 format-connected-padding = 4
 label-connected = "%local_ip% %{F#555}(%linkspeed%)%{F-}"
 ;;label-connected-foreground = ${colors.green}
