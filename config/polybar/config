@@ -5,6 +5,7 @@ accent = #fba922
 background = #1c1c1c
 background-dark = #111
 foreground = #eeeeee
+foreground-faded = #555555
 icon-foreground = #aaaaaa
 
 [bar/top]
@@ -187,26 +188,31 @@ interface = wlan0
 interval = 2.0
 ping-interval = 10
 
+format-connected = "   <label-connected>"
+format-connected-foreground = ${colors.icon-foreground}
 format-connected-background = ${colors.background-dark}
 format-connected-padding = 4
-label-connected = "   %essid%"
-label-disconnected = "   not connected"
-label-disconnected-foreground = #66
+label-connected = "%essid% (%signal%)"
+;;label-connected-foreground = ${colors.green}
 
-animation-packetloss-0 = 
-animation-packetloss-0-foreground = #ffa64c
-animation-packetloss-1 = 
-animation-packetloss-1-foreground = ${bar/top.foreground}
-animation-packetloss-framerate = 500
+format-disconnected = "   not connected"
+format-disconnected-background = ${colors.background-dark}
+format-disconnected-foreground = ${colors.foreground-faded}
+format-disconnected-padding = 4
 
 [module/wired-network]
 type = internal/network
-interface = enp0s25
+interface = ${env:ETH_IFACE:enp0s25}
 interval = 2.0
 
-label-connected =   %local_ip%
-label-disconnected = Ethernet disconnected
-label-disconnected-foreground = #66
+format-connected = "   <label-connected>"
+format-connected-foreground = ${colors.icon-foreground}
+format-connected-background = ${colors.background-dark}
+format-connected-padding = 4
+label-connected = "%local_ip% %{F#555}(%linkspeed%)%{F-}"
+;;label-connected-foreground = ${colors.green}
+
+label-disconnected = ""
 
 [module/keyboard]
 type=custom/text
