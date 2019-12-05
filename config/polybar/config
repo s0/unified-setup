@@ -120,7 +120,7 @@ font-2 = Font Awesome 5 Free Solid:pixelsize=20;3
 font-3 = Font Awesome 5 Brands:pixelsize=20;3
 
 modules-left = backlight brightup brightdown
-modules-center = i3touchmenu keyboard
+modules-center = i3touchmenu keyboard close-window lock
 modules-right = volume volmute voldown volup
 
 [module/i3]
@@ -286,6 +286,19 @@ content="  "
 content-foreground=${colors.icon-foreground}
 click-left=pactl set-sink-volume @DEFAULT_SINK@ +5%
 
+[module/close-window]
+type = custom/text
+content = "  "
+content-foreground = ${colors.red}
+click-left = i3-msg kill
+
+
+[module/lock]
+type = custom/text
+content = "    "
+content-foreground = ${colors.accent}
+click-left = wm-lock
+
 [module/volume]
 type = internal/pulseaudio
 label-muted = muted
@@ -325,20 +338,15 @@ menu-0-2-exec = menu-open-3
 menu-0-3 = "    "
 menu-0-3-exec = menu-open-4
 
-;; Lock
-menu-0-4 = "    "
-menu-0-4-foreground = ${colors.accent}
-menu-0-4-exec = wm-lock
-
 ;; Log Off
-menu-0-5 = "    "
-menu-0-5-foreground = ${colors.accent}
-menu-0-5-exec = menu-open-6
+menu-0-4 = "    "
+menu-0-4-foreground = ${colors.red}
+menu-0-4-exec = menu-open-6
 
 ;; Power Off
-menu-0-6 = "    "
-menu-0-6-foreground = ${colors.accent}
-menu-0-6-exec = menu-open-5
+menu-0-5 = "    "
+menu-0-5-foreground = ${colors.red}
+menu-0-5-exec = menu-open-5
 
 ;; Launcher: Back to main menu
 menu-1-0 = "    "
@@ -445,12 +453,12 @@ menu-5-0 = "    "
 menu-5-0-foreground = ${colors.accent}
 menu-5-0-exec = menu-open-0
 menu-5-1 = Power Off
-menu-5-1-foreground = ${colors.accent}
+menu-5-1-foreground = ${colors.red}
 menu-5-1-exec = systemctl poweroff
 
 menu-6-0 = "    "
 menu-6-0-foreground = ${colors.accent}
 menu-6-0-exec = menu-open-0
 menu-6-1 = Log Off
-menu-6-1-foreground = ${colors.accent}
+menu-6-1-foreground = ${colors.red}
 menu-6-1-exec = killall i3
