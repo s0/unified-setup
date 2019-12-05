@@ -7,15 +7,7 @@ wm-switch-wallpaper;
 
 [ -r /opt/desktop/xsession-extra ] && source /opt/desktop/xsession-extra;
 
-xcompmgr &
-
 # Load X resources file
 xrdb /unified-setup/home/.Xdefaults &
 
-(sleep 5s && python3 /unified-setup/opt/desktop/i3-plugin.py) &
-
-wm-statusbars &
-
-(sleep 1s && autorandr --change) &
-
-i3;
+exec i3;

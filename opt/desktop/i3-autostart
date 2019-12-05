@@ -1,0 +1,11 @@
+#! /bin/bash
+
+[ -r /opt/desktop/i3-autostart-extra ] && source /opt/desktop/i3-autostart-extra;
+
+xcompmgr &
+
+python3 /unified-setup/opt/desktop/i3-plugin.py &
+
+wm-statusbars &
+
+autorandr --change;

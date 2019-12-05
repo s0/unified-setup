@@ -9,6 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+exec /unified-setup/opt/desktop/i3-autostart
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
