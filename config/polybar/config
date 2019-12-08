@@ -10,7 +10,11 @@ foreground = #eeeeee
 foreground-faded = #555555
 icon-foreground = #aaaaaa
 
-[bar/top]
+[shared]
+bar-top-modules-left = i3
+bar-top-modules-right = wireless-network wired-network cpu memory temp battery date time
+
+[bar/top-big]
 monitor = ${env:MONITOR:}
 bottom = false
 width = 100%
@@ -31,8 +35,32 @@ font-5 = DejaVu Sans Mono:size=10;2
 ;; CPU Bars
 font-6 = DejaVu Sans Mono:size=6;0
 
-modules-left = i3
-modules-right = wireless-network wired-network cpu memory temp battery date time
+modules-left = ${shared.bar-top-modules-left}
+modules-right = ${shared.bar-top-modules-right}
+
+[bar/top]
+monitor = ${env:MONITOR:}
+bottom = false
+width = 100%
+height = 30
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+
+font-0 = DejaVu Sans:size=8;2
+font-1 = Font Awesome 5 Free:pixelsize=10;2
+font-2 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-3 = Font Awesome 5 Brands:pixelsize=10;2
+;; RAM Bars
+font-4 = DejaVu Sans Mono:size=4;1
+font-5 = DejaVu Sans Mono:size=4;1
+;; CPU Bars
+font-6 = DejaVu Sans Mono:size=4;0
+
+modules-left = ${shared.bar-top-modules-left}
+modules-right = ${shared.bar-top-modules-right}
 
 [module/time]
 type = internal/date
