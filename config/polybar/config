@@ -235,7 +235,7 @@ format-disconnected-padding = 4
 
 [module/wired-network]
 type = internal/network
-interface = ${env:ETH_IFACE:enp0s25}
+interface = ${env:ETH_IFACE:eth0}
 interval = 2.0
 
 format-connected = "   <label-connected>"
