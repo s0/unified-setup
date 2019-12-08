@@ -60,7 +60,9 @@ format-charging-padding = 4
 format-charging-foreground = ${colors.green}
 format-discharging = "<ramp-capacity>   <label-discharging>"
 format-discharging-padding = 4
-label-full = Full
+format-full = "   Full"
+format-full-padding = 4
+format-full-foreground = ${colors.green}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
