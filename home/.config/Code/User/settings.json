@@ -5,6 +5,7 @@
     "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": 0,
     "editor.tabSize": 2,
+    "editor.fontLigatures": true,
     "[typescript]": {
         "editor.detectIndentation": false,
         "editor.tabSize": 2
@@ -25,5 +26,6 @@
       80,
       120
     ],
-    "codeQL.runningQueries.numberOfThreads": 4
+    "codeQL.runningQueries.numberOfThreads": 4,
+    "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
 }

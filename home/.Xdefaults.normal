@@ -45,10 +45,10 @@ URxvt.color14: #66d9ef
 URxvt.color15: #ffffff
 
 ! Font
-URxvt.font:           xft:DejaVu Sans Mono:pixelsize=15:style=Regular
-URxvt.boldFont:       xft:DejaVu Sans Mono:pixelsize=15:style=Bold
-URxvt.italicFont:     xft:DejaVu Sans Mono:pixelsize=15:style=Oblique
-URxvt.boldItalicFont: xft:DejaVu Sans Mono:pixelsize=15:style=Bold Oblique
+URxvt.font:           xft:JetBrains Mono:pixelsize=15:style=Regular
+URxvt.boldFont:       xft:JetBrains Mono:pixelsize=15:style=Bold
+URxvt.italicFont:     xft:JetBrains Mono:pixelsize=15:style=Oblique
+URxvt.boldItalicFont: xft:JetBrains Mono:pixelsize=15:style=Bold Oblique
 URxvt.letterSpace:    0
 
 !Clipboard Mod
