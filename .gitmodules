@@ -13,3 +13,6 @@
 [submodule "opt/synesthesia/synesthesia"]
 	path = opt/synesthesia/synesthesia
 	url = https://github.com/synesthesia-project/synesthesia
+[submodule "opt/desktop/xeventbind"]
+	path = opt/desktop/xeventbind
+	url = https://github.com/ritave/xeventbind.git
