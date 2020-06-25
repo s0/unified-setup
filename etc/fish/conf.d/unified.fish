@@ -137,3 +137,8 @@ function vgrep
     end
   end
 end
+
+function s
+  set pwd (pwd)
+  su - -c "cd $pwd; fish"
+end
