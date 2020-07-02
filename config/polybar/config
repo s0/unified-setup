@@ -38,6 +38,8 @@ font-6 = DejaVu Sans Mono:size=6;0
 modules-left = ${shared.bar-top-modules-left}
 modules-right = ${shared.bar-top-modules-right}
 
+tray-position = right
+
 [bar/top]
 monitor = ${env:MONITOR:}
 bottom = false
@@ -61,6 +63,8 @@ font-6 = DejaVu Sans Mono:size=4;0
 
 modules-left = ${shared.bar-top-modules-left}
 modules-right = ${shared.bar-top-modules-right}
+
+tray-position = right
 
 [module/time]
 type = internal/date
