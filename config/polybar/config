@@ -278,8 +278,6 @@ format-connected-padding = 4
 label-connected = "%local_ip% %{F#555}(%linkspeed%)%{F-}"
 ;;label-connected-foreground = ${colors.green}
 
-label-disconnected = ""
-
 [module/keyboard]
 type=custom/text
 content="  "
