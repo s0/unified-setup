@@ -10,4 +10,6 @@ wm-statusbars &
 
 xeventbind resolution wm-statusbars &
 
+xeventbind resolution autoxinput &
+
 autorandr --change;
