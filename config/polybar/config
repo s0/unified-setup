@@ -372,15 +372,19 @@ menu-0-2-exec = menu-open-3
 menu-0-3 = "    "
 menu-0-3-exec = menu-open-4
 
+;; Rotate
+menu-0-4 = "    "
+menu-0-4-exec = wm-rotate-screen
+
 ;; Log Off
-menu-0-4 = "    "
-menu-0-4-foreground = ${colors.red}
-menu-0-4-exec = menu-open-6
+menu-0-5 = "    "
+menu-0-5-foreground = ${colors.red}
+menu-0-5-exec = menu-open-6
 
 ;; Power Off
-menu-0-5 = "    "
-menu-0-5-foreground = ${colors.red}
-menu-0-5-exec = menu-open-5
+menu-0-6 = "    "
+menu-0-6-foreground = ${colors.red}
+menu-0-6-exec = menu-open-5
 
 ;; Launcher: Back to main menu
 menu-1-0 = "    "

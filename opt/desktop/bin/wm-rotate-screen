@@ -1,0 +1,7 @@
+#! /bin/bash
+
+if [[ $(xrandr | grep "eDP-1 connected primary 1440x2560+0+0 left") ]]; then
+    xrandr --output eDP-1 --rotate normal
+else
+    xrandr --output eDP-1 --rotate left
+fi

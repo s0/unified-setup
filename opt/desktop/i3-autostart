@@ -12,4 +12,6 @@ xeventbind resolution wm-statusbars &
 
 xeventbind resolution autoxinput &
 
+xeventbind resolution wm-switch-wallpaper &
+
 autorandr --change;
