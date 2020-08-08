@@ -1,0 +1,64 @@
+URxvt.scrollBar: False
+
+! Background
+! URxvt.background: #171714
+! URxvt.transparent: true
+! URxvt.shading: 30
+! Comp Shading
+URxvt.depth: 32
+URxvt.background: rgba:ff00/ff00/ff00/ee00
+
+! Color Palette
+URxvt.foreground: #263238
+! Black
+URxvt.color0:  #eceff1
+! Red
+URxvt.color1:  #C62828
+! Green
+URxvt.color2:  #2E7D32
+! Yellow
+URxvt.color3:  #FF8F00
+! Blue
+URxvt.color4:  #1565C0
+! Magenta
+URxvt.color5:  #6A1B9A
+! Cyan
+URxvt.color6:  #00838F
+! White
+URxvt.color7:  #263238
+! Light Black ###
+URxvt.color8:  #4c4c4c
+! Light Red ###
+URxvt.color9: #E53935
+! Light Green ###
+URxvt.color10: #43A047
+! Light Yellow ###
+URxvt.color11: #FFB300
+! Light Blue ###
+URxvt.color12: #039BE5
+! Light Magenta ###
+URxvt.color13: #8E24AA
+! Light Cyan
+URxvt.color14: #00ACC1
+! Light White ###
+URxvt.color15: #ffffff
+
+! Font
+URxvt.font:           xft:JetBrains Mono:pixelsize=20:style=Regular
+URxvt.boldFont:       xft:JetBrains Mono:pixelsize=20:style=Bold
+URxvt.italicFont:     xft:JetBrains Mono:pixelsize=20:style=Oblique
+URxvt.boldItalicFont: xft:JetBrains Mono:pixelsize=20:style=Bold Oblique
+URxvt.letterSpace:    0
+
+!Clipboard Mod
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+
+!URL Matching
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
+
+URxvt.perl-ext-common: default,clipboard,matcher
+
+!End

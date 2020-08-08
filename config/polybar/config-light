@@ -1,0 +1,501 @@
+[colors]
+green = #009900
+amber = #996100
+red = #990000
+
+accent = #c98000
+background = #eeeeee
+background-dark = #dddddd
+foreground = #111111
+foreground-faded = #555555
+icon-foreground = #222222
+
+[shared]
+bar-top-modules-left = i3
+bar-top-modules-right = wireless-network wired-network cpu memory temp battery date time
+
+[bar/top-big]
+monitor = ${env:MONITOR:}
+bottom = false
+width = 100%
+height = 40
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+
+font-0 = DejaVu Sans:size=12;3
+font-1 = Font Awesome 5 Free:pixelsize=15;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=15;3
+font-3 = Font Awesome 5 Brands:pixelsize=15;3
+;; RAM Bars
+font-4 = DejaVu Sans Mono:size=4;0
+font-5 = DejaVu Sans Mono:size=10;2
+;; CPU Bars
+font-6 = DejaVu Sans Mono:size=6;0
+
+modules-left = ${shared.bar-top-modules-left}
+modules-right = ${shared.bar-top-modules-right}
+
+tray-position = right
+
+[bar/top]
+monitor = ${env:MONITOR:}
+bottom = false
+width = 100%
+height = 30
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 0
+
+font-0 = DejaVu Sans:size=8;2
+font-1 = Font Awesome 5 Free:pixelsize=10;2
+font-2 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-3 = Font Awesome 5 Brands:pixelsize=10;2
+;; RAM Bars
+font-4 = DejaVu Sans Mono:size=4;1
+font-5 = DejaVu Sans Mono:size=4;1
+;; CPU Bars
+font-6 = DejaVu Sans Mono:size=4;0
+
+modules-left = ${shared.bar-top-modules-left}
+modules-right = ${shared.bar-top-modules-right}
+
+tray-position = right
+
+[module/time]
+type = internal/date
+interval = 1
+format-padding = 1
+format-background = ${colors.background-dark}
+format-foreground = ${colors.icon-foreground}
+date = "   %H:%M:%S   "
+
+
+[module/date]
+type = internal/date
+interval = 5
+format-padding = 1
+format-background = ${colors.background-dark}
+format-foreground = ${colors.icon-foreground}
+date = "     %Y-%m-%d%"
+
+[module/battery]
+type = internal/battery
+
+full-at = 98
+format-charging = "<ramp-capacity>   charging: <label-charging>"
+format-charging-padding = 4
+format-charging-foreground = ${colors.green}
+format-discharging = "<ramp-capacity>   <label-discharging>"
+format-discharging-padding = 4
+format-full = "   Full"
+format-full-padding = 4
+format-full-foreground = ${colors.green}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+[module/temp]
+type = internal/temperature
+
+format = "<ramp>   <label>"
+format-padding = 4
+format-background = ${colors.background-dark}
+format-warn = "<ramp>   <label-warn>"
+format-warn-padding = 4
+format-warn-background = ${colors.background-dark}
+
+base-temperature = 30
+warn-temperature = 60
+
+label-warn-foreground = ${colors.red}
+
+ramp-0 = 
+ramp-0-foreground = ${colors.green}
+ramp-1 = 
+ramp-1-foreground = ${colors.green}
+ramp-2 = 
+ramp-2-foreground = ${colors.amber}
+ramp-3 = 
+ramp-3-foreground = ${colors.amber}
+ramp-4 = 
+ramp-4-foreground = ${colors.red}
+
+[bar/bottom]
+monitor = ${env:MONITOR:}
+bottom = true
+width = 100%
+height = 70
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+overline-size = 3
+overline-color = ${colors.accent}
+underline-size = 3
+underline-color = ${colors.accent}
+
+spacing = 3
+padding-left = 4
+padding-right = 4
+module-margin-left = 0
+module-margin-right = 6
+
+font-0 = DejaVu Sans:size=14;3
+font-1 = Font Awesome 5 Free:pixelsize=20;3
+font-2 = Font Awesome 5 Free Solid:pixelsize=20;3
+font-3 = Font Awesome 5 Brands:pixelsize=20;3
+
+modules-left = backlight brightup brightdown
+modules-center = i3touchmenu keyboard close-window lock
+modules-right = volume volmute voldown volup
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+pin-workspaces = true
+
+label-dimmed-underline = ${root.background}
+label-dimmed-overline = ${root.background}
+
+label-focused = %name%
+label-focused-background = #bbb
+label-focused-underline = #9f78e1
+label-focused-overline = #9f78e1
+label-focused-padding = 4
+
+label-unfocused = %name%
+label-unfocused-underline = #555555
+label-unfocused-overline = #555555
+label-unfocused-padding = 4
+
+label-urgent = %name%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-urgent-overline = #9b0a20
+label-urgent-padding = 4
+
+label-visible = %name%
+label-visible-foreground = #55ffffff
+label-visible-padding = 4
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1.5
+
+format = "<label><ramp-coreload>"
+format-padding = 4
+format-background = ${colors.background-dark}
+
+label = "   "
+label-foreground = #99
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 7
+ramp-coreload-0-foreground = ${colors.green}
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 7
+ramp-coreload-1-foreground = ${colors.green}
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 7
+ramp-coreload-2-foreground = ${colors.green}
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 7
+ramp-coreload-3-foreground = ${colors.green}
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 7
+ramp-coreload-4-foreground = ${colors.amber}
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 7
+ramp-coreload-5-foreground = ${colors.amber}
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 7
+ramp-coreload-6-foreground = ${colors.red}
+ramp-coreload-7 = █
+ramp-coreload-7-font = 7
+ramp-coreload-7-foreground = ${colors.red}
+
+[module/memory]
+type = internal/memory
+interval = 0.2
+
+format = "<label><bar-used>"
+format-background = ${colors.background-dark}
+format-padding = 4
+
+label = "   "
+label-foreground = #99
+
+bar-used-width = 30
+bar-used-gradient = true
+bar-used-foreground-0 = #449f3d
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator = █
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #fff
+bar-used-fill = █
+bar-used-fill-font = 5
+bar-used-empty = █
+bar-used-empty-font = 5
+bar-used-empty-foreground = #44
+
+[module/wireless-network]
+type = internal/network
+interface = wlan0
+interval = 2.0
+ping-interval = 10
+
+format-connected = "   <label-connected>"
+format-connected-foreground = ${colors.icon-foreground}
+format-connected-padding = 4
+label-connected = "%essid% (%signal%)"
+;;label-connected-foreground = ${colors.green}
+
+format-disconnected = "   not connected"
+format-disconnected-foreground = ${colors.foreground-faded}
+format-disconnected-padding = 4
+
+[module/wired-network]
+type = internal/network
+interface = ${env:ETH_IFACE:eth0}
+interval = 2.0
+
+format-connected = "   <label-connected>"
+format-connected-foreground = ${colors.icon-foreground}
+format-connected-padding = 4
+label-connected = "%local_ip% %{F#555}(%linkspeed%)%{F-}"
+;;label-connected-foreground = ${colors.green}
+
+[module/keyboard]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left = onboard &
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+
+[module/brightdown]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+;; use without percent to be compatible with acpilight (an xbacklight alt)
+click-left=xbacklight -dec 4
+
+[module/brightup]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+;; use without percent to be compatible with acpilight (an xbacklight alt)
+click-left=xbacklight -inc 4
+
+[module/volmute]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+[module/voldown]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+[module/volup]
+type=custom/text
+content="  "
+content-foreground=${colors.icon-foreground}
+click-left=pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+[module/close-window]
+type = custom/text
+content = "  "
+content-foreground = ${colors.red}
+click-left = i3-msg kill
+
+
+[module/lock]
+type = custom/text
+content = "    "
+content-foreground = ${colors.accent}
+click-left = wm-lock
+
+[module/volume]
+type = internal/pulseaudio
+label-muted = muted
+label-muted-foreground = ${colors.accent}
+
+[module/i3touchmenu]
+;; inspired by: https://github.com/ssmolkin1/i3touchmenu/blob/master/i3touchmenu
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+;; Open the menu
+label-open = "    "
+label-open-foreground = ${colors.foreground}
+
+;; Close the menu
+label-close = "    "
+label-close-foreground = ${colors.accent}
+label-separator = "  -  "
+label-separator-foreground = #666
+
+;; Launcher
+menu-0-0 = "    "
+menu-0-0-exec = menu-open-1
+
+;; Move
+menu-0-1 = "    "
+menu-0-1-exec = menu-open-2
+
+;; Move to workspace
+menu-0-2 = "    "
+menu-0-2-exec = menu-open-3
+
+;; Resize
+menu-0-3 = "    "
+menu-0-3-exec = menu-open-4
+
+;; Rotate
+menu-0-4 = "    "
+menu-0-4-exec = wm-rotate-screen
+
+;; Log Off
+menu-0-5 = "    "
+menu-0-5-foreground = ${colors.red}
+menu-0-5-exec = menu-open-6
+
+;; Power Off
+menu-0-6 = "    "
+menu-0-6-foreground = ${colors.red}
+menu-0-6-exec = menu-open-5
+
+;; Launcher: Back to main menu
+menu-1-0 = "    "
+menu-1-0-foreground = ${colors.accent}
+menu-1-0-exec = menu-open-0
+
+menu-1-1="    "
+menu-1-1-exec= wm-start-browser &
+
+menu-1-2="    "
+menu-1-2-exec = urxvt &
+
+menu-1-3="    "
+menu-1-3-exec = dmenu_run &
+
+;; Move: Back to main menu
+menu-2-0 = "    "
+menu-2-0-foreground = ${colors.accent}
+menu-2-0-exec = menu-open-0
+
+;; Move: Left
+menu-2-1 = "    "
+menu-2-1-exec = i3-msg 'move left'
+
+;; Move: Right
+menu-2-2 = "    "
+menu-2-2-exec = i3-msg 'move right'
+
+;; Move: Up
+menu-2-3 = "    "
+menu-2-3-exec = i3-msg 'move up'
+
+;; Move: Down
+menu-2-4 = "    "
+menu-2-4-exec = i3-msg 'move down'
+
+;; Move to workspace: Back to main menu
+menu-3-0 = "    "
+menu-3-0-foreground = ${colors.accent}
+menu-3-0-exec = menu-open-0
+
+;; Move to workspace: 1
+menu-3-1 = "  1  "
+menu-3-1-exec = i3-msg 'move container to workspace 1'
+
+;; Move to workspace: 2
+menu-3-2 = "  2  "
+menu-3-2-exec = i3-msg 'move container to workspace 2'
+
+;; Move to workspace: 3
+menu-3-3 = "  3  "
+menu-3-3-exec = i3-msg 'move container to workspace 3'
+
+;; Move to workspace: 4
+menu-3-4 = "  4  "
+menu-3-4-exec = i3-msg 'move container to workspace 4'
+
+;; Move to workspace: 5
+menu-3-5 = "  5  "
+menu-3-5-exec = i3-msg 'move container to workspace 5'
+
+;; Move to workspace: 6
+menu-3-6 = "  6  "
+menu-3-6-exec = i3-msg 'move container to workspace 6'
+
+;; Move to workspace: 7
+menu-3-7 = "  7  "
+menu-3-7-exec = i3-msg 'move container to workspace 7'
+
+;; Move to workspace: 8
+menu-3-8 = "  8  "
+menu-3-8-exec = i3-msg 'move container to workspace 8'
+
+;; Move to workspace: 9
+menu-3-9 = "  9  "
+menu-3-9-exec = i3-msg 'move container to workspace 9'
+
+;; Move to workspace: 10
+menu-3-10 = "  10  "
+menu-3-10-exec = i3-msg 'move container to workspace 10'
+
+;; Resize: Back to main menu
+menu-4-0 = "    "
+menu-4-0-foreground = ${colors.accent}
+menu-4-0-exec = menu-open-0
+
+;; Resize: Grow height
+menu-4-1 = "    "
+menu-4-1-exec = i3-msg 'resize grow height 5 px or 5 ppt'
+
+;; Resize: Shrink height
+menu-4-2 = "   height  "
+menu-4-2-exec = i3-msg 'resize shrink height 5 px or 5 ppt'
+
+;; Resize: Grow width
+menu-4-3 = "    "
+menu-4-3-exec = i3-msg 'resize grow width 5 px or 5 ppt'
+
+;; Resize: Shrink width
+menu-4-4 = "   width  "
+menu-4-4-exec = i3-msg 'resize shrink width 5 px or 5 ppt'
+
+menu-5-0 = "    "
+menu-5-0-foreground = ${colors.accent}
+menu-5-0-exec = menu-open-0
+menu-5-1 = Power Off
+menu-5-1-foreground = ${colors.red}
+menu-5-1-exec = systemctl poweroff
+
+menu-6-0 = "    "
+menu-6-0-foreground = ${colors.accent}
+menu-6-0-exec = menu-open-0
+menu-6-1 = Log Off
+menu-6-1-foreground = ${colors.red}
+menu-6-1-exec = killall i3

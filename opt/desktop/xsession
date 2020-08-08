@@ -8,6 +8,11 @@ wm-switch-wallpaper;
 [ -r /opt/desktop/xsession-extra ] && source /opt/desktop/xsession-extra;
 
 # Load X resources file
-xrdb /unified-setup/home/.Xdefaults &
+if [ -z "$LIGHT_MODE" ]
+then
+    xrdb /unified-setup/home/.Xdefaults &
+else
+    xrdb /unified-setup/home/.Xdefaults.light &
+fi
 
 exec i3;

@@ -1,0 +1,5 @@
+#! /bin/bash
+
+export LIGHT_MODE=true;
+
+exec /unified-setup/opt/desktop/xsession;

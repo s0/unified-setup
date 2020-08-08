@@ -8,7 +8,7 @@ python3 /unified-setup/opt/desktop/i3-plugin.py &
 
 wm-statusbars &
 
-xeventbind resolution wm-statusbars &
+xeventbind resolution wm-statusbars-delayed &
 
 xeventbind resolution autoxinput &
 

@@ -1,5 +1,7 @@
 #! /bin/bash
 
+autorandr -c
+
 # pick wallpaper for lightdm-gtk
 /unified-setup/opt/desktop/pick-random-wallpaper
 

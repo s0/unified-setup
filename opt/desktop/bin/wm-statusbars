@@ -1,3 +1,12 @@
 #! /bin/bash
 
-exec polybar -c /unified-setup/config/polybar/config top
+killall polybar
+
+if [ -z "$LIGHT_MODE" ]; then
+    CONF_PATH=/unified-setup/config/polybar/config
+else
+    CONF_PATH=/unified-setup/config/polybar/config-light
+fi
+
+
+exec polybar -c ${CONF_PATH} top

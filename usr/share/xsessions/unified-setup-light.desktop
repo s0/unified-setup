@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=Unified (Light)
+Comment=Unified Setup Session (Light Mode)
+Exec=/unified-setup/opt/desktop/xsession-light

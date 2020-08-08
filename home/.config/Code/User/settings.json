@@ -21,12 +21,17 @@
     "java.configuration.checkProjectSettingsExclusions": false,
     "editor.acceptSuggestionOnEnter": "off",
     "breadcrumbs.enabled": false,
-    "editor.minimap.enabled": false,
     "editor.rulers": [
       80,
       120
     ],
     "codeQL.runningQueries.numberOfThreads": 4,
     "editor.fontFamily": "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
-    "editor.lineHeight": 20
+    "editor.lineHeight": 20,
+    "remote.extensionKind": {
+      "ms-azuretools.vscode-docker": "workspace"
+    },
+    "coverage-gutters.manualCoverageFilePaths": [
+      "/home/unocha/repos/hpc-actions/action/.coverage/lcov.info"
+    ]
 }

@@ -1,0 +1,8 @@
+#! /bin/bash
+
+if [ -z "$LIGHT_MODE" ]
+then
+    xrdb /unified-setup/home/.Xdefaults &
+else
+    xrdb /unified-setup/home/.Xdefaults.light &
+fi
