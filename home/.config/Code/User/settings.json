@@ -33,5 +33,7 @@
     },
     "coverage-gutters.manualCoverageFilePaths": [
       "/home/unocha/repos/hpc-actions/action/.coverage/lcov.info"
-    ]
+    ],
+    "terminal.integrated.rendererType": "dom",
+    "editor.selectionClipboard": false
 }
