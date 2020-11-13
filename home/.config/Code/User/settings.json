@@ -35,5 +35,6 @@
       "/home/unocha/repos/hpc-actions/action/.coverage/lcov.info"
     ],
     "terminal.integrated.rendererType": "dom",
-    "editor.selectionClipboard": false
+    "editor.selectionClipboard": false,
+    "terminal.integrated.localEchoLatencyThreshold": -1
 }
