@@ -10,7 +10,7 @@ wm-statusbars &
 
 xeventbind resolution wm-statusbars-delayed &
 
-xeventbind resolution autoxinput &
+xeventbind resolution autoxinput-delayed &
 
 xeventbind resolution wm-switch-wallpaper &
 
