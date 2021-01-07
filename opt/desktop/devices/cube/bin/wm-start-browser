@@ -1,0 +1,9 @@
+#! /bin/bash
+
+if [ -z "$LIGHT_MODE" ]
+then
+    exec /opt/wavebox.io/wavebox/wavebox --force-dark-mode "$@" # --flag-switches-begin --enable-features=WebContentsForceDark --flag-switches-end "$@"
+else
+    exec /opt/wavebox.io/wavebox/wavebox "$@" # --flag-switches-begin --disable-features=WebContentsForceDark --flag-switches-end "$@"
+fi
+

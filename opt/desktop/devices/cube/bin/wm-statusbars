@@ -1,0 +1,12 @@
+#! /bin/bash
+
+killall polybar
+
+if [ -z "$LIGHT_MODE" ]; then
+    CONF_PATH=/unified-setup/config/polybar/config
+else
+    CONF_PATH=/unified-setup/config/polybar/config-light
+fi
+
+MONITOR=DP-2 polybar -c ${CONF_PATH} top &
+MONITOR=HDMI-1 polybar -c ${CONF_PATH} top &
