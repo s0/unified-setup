@@ -64,7 +64,7 @@ set -x EDITOR "emacs -nw -l /unified-setup/config/emacs/.emacs"
 set -x VISUAL $EDITOR
 set -x UAEDITOR $EDITOR
 set -x LS_OPTIONS '--color=auto --group-directories-first -h --time-style=long-iso'
-set -gx PATH ~/.bin $PATH (yarn global bin)
+set -gx PATH ~/.bin /opt/desktop/bin $PATH (yarn global bin)
 
 # aliases + abbreviations
 # =======================
