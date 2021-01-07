@@ -9,5 +9,5 @@ chown $build_user $build_dir
 cp /unified-setup/aur/aurget-PKGBUILD ${build_dir}/PKGBUILD
 su - $build_user -c "cd ${build_dir}; git clone /unified-setup/external/aurget ./src; makepkg"
 
-cp /tmp/aurget/aurget-4.7.2-1-any.pkg.tar.xz /var/cache/pacman/pkg/
-pacman -U /var/cache/pacman/pkg/aurget-4.7.2-1-any.pkg.tar.xz
+cp /tmp/aurget/aurget-4.7.2-1-any.pkg.tar.zst /var/cache/pacman/pkg/
+pacman -U /var/cache/pacman/pkg/aurget-4.7.2-1-any.pkg.tar.zst

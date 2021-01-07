@@ -10,5 +10,5 @@ chown $build_user $build_dir
 cp /unified-setup/aur/python-notify2-PKGBUILD ${build_dir}/PKGBUILD
 su - $build_user -c "cd ${build_dir}; makepkg"
 
-cp /tmp/aurget/python-notify2-0.3.1-2-any.pkg.tar.xz /var/cache/pacman/pkg/
-pacman -U /var/cache/pacman/pkg/python-notify2-0.3.1-2-any.pkg.tar.xz
+cp /tmp/aurget/python-notify2-0.3.1-2-any.pkg.tar.zst /var/cache/pacman/pkg/
+pacman -U /var/cache/pacman/pkg/python-notify2-0.3.1-2-any.pkg.tar.zst

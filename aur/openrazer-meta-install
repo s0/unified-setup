@@ -16,16 +16,16 @@ cp /unified-setup/aur/openrazer-driver-dkms.install ${build_dir}/
 cp /unified-setup/aur/openrazer-meta-PKGBUILD ${build_dir}/PKGBUILD
 su - $build_user -c "cd ${build_dir}; makepkg"
 
-cp /tmp/aurget/openrazer-daemon-2.5.0-1-any.pkg.tar.xz \
-   /tmp/aurget/openrazer-driver-dkms-2.5.0-1-any.pkg.tar.xz \
-   /tmp/aurget/openrazer-meta-2.5.0-1-any.pkg.tar.xz \
-   /tmp/aurget/python-openrazer-2.5.0-1-any.pkg.tar.xz \
+cp /tmp/aurget/openrazer-daemon-2.5.0-1-any.pkg.tar.zst \
+   /tmp/aurget/openrazer-driver-dkms-2.5.0-1-any.pkg.tar.zst \
+   /tmp/aurget/openrazer-meta-2.5.0-1-any.pkg.tar.zst \
+   /tmp/aurget/python-openrazer-2.5.0-1-any.pkg.tar.zst \
    /var/cache/pacman/pkg/
 pacman -U \
-       /var/cache/pacman/pkg/openrazer-daemon-2.5.0-1-any.pkg.tar.xz \
-       /var/cache/pacman/pkg/openrazer-driver-dkms-2.5.0-1-any.pkg.tar.xz \
-       /var/cache/pacman/pkg/openrazer-meta-2.5.0-1-any.pkg.tar.xz \
-       /var/cache/pacman/pkg/python-openrazer-2.5.0-1-any.pkg.tar.xz
+       /var/cache/pacman/pkg/openrazer-daemon-2.5.0-1-any.pkg.tar.zst \
+       /var/cache/pacman/pkg/openrazer-driver-dkms-2.5.0-1-any.pkg.tar.zst \
+       /var/cache/pacman/pkg/openrazer-meta-2.5.0-1-any.pkg.tar.zst \
+       /var/cache/pacman/pkg/python-openrazer-2.5.0-1-any.pkg.tar.zst
 
 # add sam to group that allows controlling keyboard lights
 gpasswd -a sam plugdev

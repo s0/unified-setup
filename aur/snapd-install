@@ -11,7 +11,7 @@ cp /unified-setup/aur/snapd-snapd.install ${build_dir}/snapd.install
 su - $build_user -c "cd ${build_dir}; git clone /unified-setup/external/snapd ./src; makepkg"
 
 cp /tmp/snapd/snapd-2.37-1-x86_64.pkg.tar.xz /var/cache/pacman/pkg/
-pacman -U /var/cache/pacman/pkg/snapd-2.37-1-x86_64.pkg.tar.xz
+pacman -U /var/cache/pacman/pkg/snapd-2.37-1-x86_64.pkg.tar.zst
 ln -s /var/lib/snapd/snap /snap
 systemctl start snapd
 systemctl enable snapd
