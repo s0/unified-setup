@@ -2,15 +2,29 @@
 
 cd ~
 
-echo -ne "Launch VSCode in ~/work/repo ? [Y/n]: "
-read LOAD_VSCODE
+# If vscode has not aslready started, offer to start it
+# (the result will be 1 becaus ps will pick up grep
+if [ "$(ps aux | grep vscode-server | wc -l)" == "1" ]; then
 
-if [ -z "$LOAD_VSCODE" ] || [ "$LOAD_VSCODE" == "y" ] || [ "$LOAD_VSCODE" == "Y" ]; then
-   echo "Launching VSCode"
-   cd ~/work/repos
-   code .
-else
-  fish
+    echo -ne "Launch VSCode in ~/work/repo ? [Y/n]: "
+    read LOAD_VSCODE
+
+    if [[ -z "$LOAD_VSCODE" || "$LOAD_VSCODE" == "y" || "$LOAD_VSCODE" == "Y" ]]; then
+        echo "Launching VSCode"
+        cd ~/work/repos
+        code .
+    fi
+fi
+
+# We need a process to keep running even when we launch vscode
+# as the child process terminates immediately
+
+# we use fish for that, and can kill the agent with Ctrl+D
+
+fish
+
+if [ -f /etc/bash.bash_logout ]; then
+    /etc/bash.bash_logout
 fi
 
 exit 0
