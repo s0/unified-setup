@@ -1,0 +1,16 @@
+#! /bin/bash
+
+cd ~
+
+echo -ne "Launch VSCode in ~/work/repo ? [Y/n]: "
+read LOAD_VSCODE
+
+if [ -z "$LOAD_VSCODE" ] || [ "$LOAD_VSCODE" == "y" ] || [ "$LOAD_VSCODE" == "Y" ]; then
+   echo "Launching VSCode"
+   cd ~/work/repos
+   code .
+else
+  fish
+fi
+
+exit 0
