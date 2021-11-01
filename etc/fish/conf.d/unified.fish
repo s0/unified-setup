@@ -142,3 +142,13 @@ function s
   set pwd (pwd)
   su - -c "cd $pwd; fish"
 end
+
+function eslint-and-prettier-changes
+    set diff (git diff --cached --name-only);
+    if test -n "$diff"
+      npx --no-install eslint (git diff --cached --name-only);
+      npx --no-install prettier --write (git diff --cached --name-only);
+    else
+      echo "no changes";
+    end
+end
