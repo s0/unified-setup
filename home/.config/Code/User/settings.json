@@ -8,11 +8,13 @@
     "editor.fontLigatures": true,
     "[typescript]": {
         "editor.detectIndentation": false,
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescriptreact]": {
       "editor.detectIndentation": false,
-      "editor.tabSize": 2
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "terminal.integrated.copyOnSelection": true,
     "editor.wordWrap": "on",
@@ -36,5 +38,6 @@
     ],
     "terminal.integrated.rendererType": "dom",
     "editor.selectionClipboard": false,
-    "terminal.integrated.localEchoLatencyThreshold": -1
+    "terminal.integrated.localEchoLatencyThreshold": -1,
+    "workbench.colorTheme": "Default Dark+"
 }
