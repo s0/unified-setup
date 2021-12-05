@@ -152,3 +152,26 @@ function eslint-and-prettier-changes
       echo "no changes";
     end
 end
+
+function _atuin_preexec --on-event fish_preexec
+  set -gx ATUIN_HISTORY_ID (atuin history start "$argv[1]")
+end
+
+function _atuin_postexec --on-event fish_postexec
+  set s $status
+  if test -n "$ATUIN_HISTORY_ID"
+    RUST_LOG=error atuin history end $ATUIN_HISTORY_ID --exit $s &; disown
+  end
+end
+
+
+function _atuin_history
+  set h (RUST_LOG=error atuin search -i (commandline -b) 3>&1 1>&2 2>&3)
+  commandline -f repaint
+  if test -n "$h"
+    commandline -r $h
+  end
+end
+
+bind \cr '_atuin_history'
+bind -k up '_atuin_history'
