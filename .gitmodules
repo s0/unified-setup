@@ -19,3 +19,6 @@
 [submodule "opt/desktop/autoxinput"]
 	path = opt/desktop/autoxinput
 	url = https://github.com/s0/autoxinput.git
+[submodule "external/atuin"]
+	path = external/atuin
+	url = git@github.com:ellie/atuin.git
