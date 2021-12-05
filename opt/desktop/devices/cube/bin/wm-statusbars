@@ -8,5 +8,5 @@ else
     CONF_PATH=/unified-setup/config/polybar/config-light
 fi
 
-MONITOR=DP-0.8 polybar -c ${CONF_PATH} top &
-MONITOR=DP-0.1 polybar -c ${CONF_PATH} top &
+MONITOR=DP-2.8 polybar -c ${CONF_PATH} top &
+MONITOR=DP-2.1 polybar -c ${CONF_PATH} top &
