@@ -153,6 +153,16 @@ function eslint-and-prettier-changes
     end
 end
 
+function eslint-and-prettier-prev
+    set diff (git diff HEAD~1 --name-only);
+    if test -n "$diff"
+      npx --no-install eslint (git diff HEAD~1 --name-only);
+      npx --no-install prettier --write (git diff HEAD~1 --name-only);
+    else
+      echo "no changes";
+    end
+end
+
 function _atuin_preexec --on-event fish_preexec
   set -gx ATUIN_HISTORY_ID (atuin history start "$argv[1]")
 end
@@ -163,7 +173,6 @@ function _atuin_postexec --on-event fish_postexec
     RUST_LOG=error atuin history end $ATUIN_HISTORY_ID --exit $s &; disown
   end
 end
-
 
 function _atuin_history
   set h (RUST_LOG=error atuin search -i (commandline -b) 3>&1 1>&2 2>&3)
