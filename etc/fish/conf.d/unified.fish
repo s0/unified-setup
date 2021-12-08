@@ -184,3 +184,5 @@ end
 
 bind \cr '_atuin_history'
 bind -k up '_atuin_history'
+bind \eOA '_atuin_history'
+bind \e\[A '_atuin_history'
