@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Unified (DEBUG MODE: Allow Greeter)
+Comment=Unified Setup Session
+Exec=/unified-setup/opt/desktop/xsession
+X-LightDM-Allow-Greeter=true
