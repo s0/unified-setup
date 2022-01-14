@@ -1,7 +1,7 @@
 URxvt.scrollBar: False
 
 ! Background
-URxvt.background: #171714
+! URxvt.background: #171714
 !URxvt.transparent: true
 !URxvt.shading: 30
 ! Comp Shading
