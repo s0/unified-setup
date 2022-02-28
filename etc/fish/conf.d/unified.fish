@@ -60,11 +60,19 @@ end
 # environment variables
 # =====================
 
-set -x EDITOR "emacs -nw -l /unified-setup/config/emacs/.emacs"
+switch (uname)
+    case Darwin
+        set -x LS_OPTIONS '--color=auto -h'
+	set -x EDITOR "emacs"
+    case '*'
+        set -x LS_OPTIONS '--color=auto --group-directories-first -h --time-style=long-iso'
+	set -x EDITOR "emacs -nw -l /unified-setup/config/emacs/.emacs"
+end
+
 set -x VISUAL $EDITOR
 set -x UAEDITOR $EDITOR
-set -x LS_OPTIONS '--color=auto --group-directories-first -h --time-style=long-iso'
 set -gx PATH ~/.bin ~/.local/bin /unified-setup/bin $PATH (yarn global bin)
+
 
 # aliases + abbreviations
 # =======================
@@ -75,7 +83,14 @@ alias e=$EDITOR
 alias x='xdg-open'
 alias rm='rm -i'
 alias mv='mv -i'
-alias ls='ls --color=auto --group-directories-first -h --time-style=long-iso'
+
+switch (uname)
+    case Darwin
+        alias ls='ls --color=auto -h'
+    case '*'
+        alias ls='ls --color=auto --group-directories-first -h --time-style=long-iso'
+end
+
 alias ll='ls -l'
 alias l='ls -la'
 alias grep='grep --color'
