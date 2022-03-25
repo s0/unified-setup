@@ -87,6 +87,7 @@ alias mv='mv -i'
 switch (uname)
     case Darwin
         alias ls='ls --color=auto -h'
+	alias ibrew='arch -x86_64 /usr/local/bin/brew'
     case '*'
         alias ls='ls --color=auto --group-directories-first -h --time-style=long-iso'
 end
