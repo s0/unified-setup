@@ -31,6 +31,7 @@
 
 -A Allow -p icmp -j ACCEPT
 -A Allow -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A Allow -p tcp -m state --state NEW -m tcp --dport 8120 -j ACCEPT
 -A Allow -j DROP
 
 COMMIT
