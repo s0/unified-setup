@@ -179,4 +179,6 @@ function eslint-and-prettier-prev
     end
 end
 
+set -x ATUIN_CONFIG_DIR /unified-setup/etc/atuin
+
 atuin init fish | source
