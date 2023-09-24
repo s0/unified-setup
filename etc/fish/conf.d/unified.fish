@@ -69,9 +69,15 @@ switch (uname)
 	set -x EDITOR "emacs -nw -l /unified-setup/config/emacs/.emacs"
 end
 
+if set -q TERM_PROGRAM
+   if test $TERM_PROGRAM = vscode
+      set -x EDITOR "code --wait"
+   end
+end
+
 set -x VISUAL $EDITOR
 set -x UAEDITOR $EDITOR
-set -gx PATH ~/.bin ~/.local/bin /unified-setup/bin $PATH (yarn global bin)
+set -gx PATH ~/.bin ~/.local/bin /unified-setup/bin $PATH
 
 
 # aliases + abbreviations
@@ -88,8 +94,10 @@ switch (uname)
     case Darwin
         alias ls='ls --color=auto -h'
 	alias ibrew='arch -x86_64 /usr/local/bin/brew'
+	set -x ATUIN_CONFIG_DIR /opt/unified-setup/etc/atuin
     case '*'
         alias ls='ls --color=auto --group-directories-first -h --time-style=long-iso'
+	set -x ATUIN_CONFIG_DIR /unified-setup/etc/atuin
 end
 
 alias ll='ls -l'
@@ -179,6 +187,5 @@ function eslint-and-prettier-prev
     end
 end
 
-set -x ATUIN_CONFIG_DIR /unified-setup/etc/atuin
 
 atuin init fish | source
