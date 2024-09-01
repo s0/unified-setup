@@ -123,7 +123,8 @@ abbr --add gb 'git branch -vv'
 # =========
 
 function gprune
- git branch --merged | grep -v "\*" | grep -v -P "(master)|(staging)|(develop)" | tee /tmp/branchprune | xargs -n 1 git branch -d
+ # git branch --merged | grep -v "\*" | grep -v -P "(master)|(staging)|(develop)" | tee /tmp/branchprune | xargs -n 1 git branch -d
+ git fetch -p && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
 end
 
 function gpr --description "check out the given pull request"
