@@ -71,7 +71,12 @@ end
 
 if set -q TERM_PROGRAM
    if test $TERM_PROGRAM = vscode
-      set -x EDITOR "code --wait"
+      # Check if we're actually in Cursor
+      if set -q CURSOR_TRACE_ID
+         set -x EDITOR "cursor --wait"
+      else
+         set -x EDITOR "code --wait"
+      end
    end
 end
 
